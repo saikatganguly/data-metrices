@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="processor" />
+        <module name="sink" />
+        <module name="source" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="data-metrices" target="8" />
+      <module name="processor" target="8" />
+      <module name="sink" target="8" />
+      <module name="source" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

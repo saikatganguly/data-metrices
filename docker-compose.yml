@@ -3,11 +3,12 @@ version: '3.3'
 services:
   #local jenkins setup. point your job and user dir here.
   jenkins:
-    image: jenkins/jenkins:latest
+    image: jenkins/jenkins:lts
     restart: always
     volumes:
       - /home/jenkins_home/jobs:/var/jenkins_home/jobs
       - /home/jenkins_home/users:/var/jenkins_home/users
+      - /home/jenkins_home/plugins:/var/jenkins_home/plugins
     ports:
     - "8080:8080"
     - "50000:50000"

@@ -1,0 +1,15 @@
+server:
+  port : 8082
+spring:
+  batch:
+    job:
+      enabled: false
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        message-out:
+          destination: eventbus
+          contentType: application/json

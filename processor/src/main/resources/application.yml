@@ -1,15 +1,15 @@
 server:
-  port : 7000
+  port : 7001
 spring:
-  batch:
-    job:
-      enabled: false
   cloud:
     stream:
       kafka:
         binder:
           brokers: localhost:9092
       bindings:
-        message-out:
+        message-in:
           destination: processorbus
+          contentType: application/json
+        message-out:
+          destination: eventBus
           contentType: application/json

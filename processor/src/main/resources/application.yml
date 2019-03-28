@@ -11,5 +11,5 @@ spring:
           destination: processorbus
           contentType: application/json
         message-out:
-          destination: eventBus
+          destination: eventbus
           contentType: application/json

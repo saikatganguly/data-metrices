@@ -18,10 +18,9 @@ import java.nio.charset.Charset;
 public class JenkinsDataImporter implements ItemReader<String>{
 
     private boolean batchJobState = false;
-    private String jenkinsUrl= "http://localhost:8080/api/json?tree=jobs[name,url,builds[id,number,result," +
-            "duration,description,estimatedDuration,fullDisplayName," +
-            "timestamp,consoleFull,actions[causes[shortDescription,upstreamProject,upstreamBuild,upstreamUrl,userId," +
-            "userName],lastBuiltRevision[branch[*],parameters[name,value]]]]]";
+    private String jenkinsUrl= "http://localhost:8080/api/json?tree=jobs[name,url,builds[*,artifacts[*],changesets[*]," +
+            "previousBuild,fingerprint[*],culprits[*],actions[*,tags[*],causes[shortDescription,upstreamProject,upstreamBuild,upstreamUrl," +
+            "userId,userName],lastBuiltRevision[*,branch[*]]]]]&pretty=true";
 
     public String read() throws Exception {
         if(!batchJobState) {

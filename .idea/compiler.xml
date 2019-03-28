@@ -11,11 +11,5 @@
         <module name="source" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="data-metrices" target="8" />
-      <module name="processor" target="8" />
-      <module name="sink" target="8" />
-      <module name="source" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

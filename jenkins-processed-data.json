@@ -1,0 +1,760 @@
+{
+  "test-pipeline-1": [
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#6",
+      "duration": 2882,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #6",
+      "id": "6",
+      "keepLog": false,
+      "number": 6,
+      "queueId": "11",
+      "result": "SUCCESS",
+      "timestamp": 1553932180148,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/6/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    },
+    {
+      "building": false,
+      "description": "null",
+      "displayName": "#5",
+      "duration": 3157,
+      "estimatedDuration": 3020,
+      "executor": "null",
+      "fullDisplayName": "test-pipeline-1 #5",
+      "id": "5",
+      "keepLog": false,
+      "number": 5,
+      "queueId": "9",
+      "result": "FAILURE",
+      "timestamp": 1553931936252,
+      "url": "http://192.168.99.100:8080/job/test-pipeline-1/5/",
+      "gitDetails": {
+        "repo": "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git",
+        "branch": "refs/remotes/origin/master",
+        "commit": "01107d77e05dedeaf622486f3951fd74d5702aac"
+      },
+      "causeDetails": {
+        "causeName": "hudson.model.Cause$UserIdCause",
+        "userName": "anonymous",
+        "userId": "null",
+        "upstream": null
+      }
+    }
+  ]
+}

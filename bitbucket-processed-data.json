@@ -1,0 +1,338 @@
+[
+  {
+    "BitbucketRepo{hostName='http://192.168.99.100:7990', projectName='test-project-key-1', repoName='test-repository-1'}": {
+      "c70778cfc26d239dbfeac92b1ff7b37f44da4075": {
+        "id": "c70778cfc26d239dbfeac92b1ff7b37f44da4075",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.21",
+        "timeStamp": 0
+      },
+      "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab": {
+        "id": "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.24",
+        "timeStamp": 0
+      },
+      "4826893e1dbeee1bc1a94729c2f88dc877d5a517": {
+        "id": "4826893e1dbeee1bc1a94729c2f88dc877d5a517",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.17",
+        "timeStamp": 0
+      },
+      "86f3d2b846f6f3cc439458a5e046d6e631d50cc3": {
+        "id": "86f3d2b846f6f3cc439458a5e046d6e631d50cc3",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.22",
+        "timeStamp": 0
+      },
+      "9762ac903a405ffce6db5b41d0bdfed317594d5f": {
+        "id": "9762ac903a405ffce6db5b41d0bdfed317594d5f",
+        "authorName": "asanodia",
+        "authorEmailAddress": "asanodia@email.com",
+        "message": "US10000 - @asanodia - Another commmit to update readme",
+        "tag": "1.0.16",
+        "timeStamp": 0
+      },
+      "7f45228d95f22b6214629eb5f16f0872fb470745": {
+        "id": "7f45228d95f22b6214629eb5f16f0872fb470745",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.19",
+        "timeStamp": 0
+      },
+      "def9013e08403409904b42f647e111c0a4dca525": {
+        "id": "def9013e08403409904b42f647e111c0a4dca525",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.18",
+        "timeStamp": 0
+      },
+      "871a30566cd7d182c010b16293d6541dd96b1d20": {
+        "id": "871a30566cd7d182c010b16293d6541dd96b1d20",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.23",
+        "timeStamp": 0
+      },
+      "8dac80335912b8a974f962b59559dda556bf5c88": {
+        "id": "8dac80335912b8a974f962b59559dda556bf5c88",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.25",
+        "timeStamp": 0
+      },
+      "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103": {
+        "id": "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.20",
+        "timeStamp": 0
+      }
+    }
+  },
+  {
+    "BitbucketRepo{hostName='http://192.168.99.100:7990', projectName='test-project-key-1', repoName='test-repository-1'}": {
+      "c70778cfc26d239dbfeac92b1ff7b37f44da4075": {
+        "id": "c70778cfc26d239dbfeac92b1ff7b37f44da4075",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.21",
+        "timeStamp": 0
+      },
+      "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab": {
+        "id": "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.24",
+        "timeStamp": 0
+      },
+      "4826893e1dbeee1bc1a94729c2f88dc877d5a517": {
+        "id": "4826893e1dbeee1bc1a94729c2f88dc877d5a517",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.17",
+        "timeStamp": 0
+      },
+      "86f3d2b846f6f3cc439458a5e046d6e631d50cc3": {
+        "id": "86f3d2b846f6f3cc439458a5e046d6e631d50cc3",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.22",
+        "timeStamp": 0
+      },
+      "9762ac903a405ffce6db5b41d0bdfed317594d5f": {
+        "id": "9762ac903a405ffce6db5b41d0bdfed317594d5f",
+        "authorName": "asanodia",
+        "authorEmailAddress": "asanodia@email.com",
+        "message": "US10000 - @asanodia - Another commmit to update readme",
+        "tag": "1.0.16",
+        "timeStamp": 0
+      },
+      "7f45228d95f22b6214629eb5f16f0872fb470745": {
+        "id": "7f45228d95f22b6214629eb5f16f0872fb470745",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.19",
+        "timeStamp": 0
+      },
+      "def9013e08403409904b42f647e111c0a4dca525": {
+        "id": "def9013e08403409904b42f647e111c0a4dca525",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.18",
+        "timeStamp": 0
+      },
+      "871a30566cd7d182c010b16293d6541dd96b1d20": {
+        "id": "871a30566cd7d182c010b16293d6541dd96b1d20",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.23",
+        "timeStamp": 0
+      },
+      "8dac80335912b8a974f962b59559dda556bf5c88": {
+        "id": "8dac80335912b8a974f962b59559dda556bf5c88",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.25",
+        "timeStamp": 0
+      },
+      "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103": {
+        "id": "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.20",
+        "timeStamp": 0
+      }
+    }
+  },
+  {
+    "BitbucketRepo{hostName='http://192.168.99.100:7990', projectName='test-project-key-1', repoName='test-repository-1'}": {
+      "c70778cfc26d239dbfeac92b1ff7b37f44da4075": {
+        "id": "c70778cfc26d239dbfeac92b1ff7b37f44da4075",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.21",
+        "timeStamp": 0
+      },
+      "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab": {
+        "id": "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.24",
+        "timeStamp": 0
+      },
+      "4826893e1dbeee1bc1a94729c2f88dc877d5a517": {
+        "id": "4826893e1dbeee1bc1a94729c2f88dc877d5a517",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.17",
+        "timeStamp": 0
+      },
+      "86f3d2b846f6f3cc439458a5e046d6e631d50cc3": {
+        "id": "86f3d2b846f6f3cc439458a5e046d6e631d50cc3",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.22",
+        "timeStamp": 0
+      },
+      "9762ac903a405ffce6db5b41d0bdfed317594d5f": {
+        "id": "9762ac903a405ffce6db5b41d0bdfed317594d5f",
+        "authorName": "asanodia",
+        "authorEmailAddress": "asanodia@email.com",
+        "message": "US10000 - @asanodia - Another commmit to update readme",
+        "tag": "1.0.16",
+        "timeStamp": 0
+      },
+      "7f45228d95f22b6214629eb5f16f0872fb470745": {
+        "id": "7f45228d95f22b6214629eb5f16f0872fb470745",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.19",
+        "timeStamp": 0
+      },
+      "def9013e08403409904b42f647e111c0a4dca525": {
+        "id": "def9013e08403409904b42f647e111c0a4dca525",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.18",
+        "timeStamp": 0
+      },
+      "871a30566cd7d182c010b16293d6541dd96b1d20": {
+        "id": "871a30566cd7d182c010b16293d6541dd96b1d20",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.23",
+        "timeStamp": 0
+      },
+      "8dac80335912b8a974f962b59559dda556bf5c88": {
+        "id": "8dac80335912b8a974f962b59559dda556bf5c88",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.25",
+        "timeStamp": 0
+      },
+      "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103": {
+        "id": "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.20",
+        "timeStamp": 0
+      }
+    }
+  },
+  {
+    "BitbucketRepo{hostName='http://192.168.99.100:7990', projectName='test-project-key-1', repoName='test-repository-1'}": {
+      "c70778cfc26d239dbfeac92b1ff7b37f44da4075": {
+        "id": "c70778cfc26d239dbfeac92b1ff7b37f44da4075",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.21",
+        "timeStamp": 0
+      },
+      "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab": {
+        "id": "bb4ba729d1ad11e83cef29ae17cebeb2e2a021ab",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.24",
+        "timeStamp": 0
+      },
+      "4826893e1dbeee1bc1a94729c2f88dc877d5a517": {
+        "id": "4826893e1dbeee1bc1a94729c2f88dc877d5a517",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.17",
+        "timeStamp": 0
+      },
+      "86f3d2b846f6f3cc439458a5e046d6e631d50cc3": {
+        "id": "86f3d2b846f6f3cc439458a5e046d6e631d50cc3",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.22",
+        "timeStamp": 0
+      },
+      "9762ac903a405ffce6db5b41d0bdfed317594d5f": {
+        "id": "9762ac903a405ffce6db5b41d0bdfed317594d5f",
+        "authorName": "asanodia",
+        "authorEmailAddress": "asanodia@email.com",
+        "message": "US10000 - @asanodia - Another commmit to update readme",
+        "tag": "1.0.16",
+        "timeStamp": 0
+      },
+      "7f45228d95f22b6214629eb5f16f0872fb470745": {
+        "id": "7f45228d95f22b6214629eb5f16f0872fb470745",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.19",
+        "timeStamp": 0
+      },
+      "def9013e08403409904b42f647e111c0a4dca525": {
+        "id": "def9013e08403409904b42f647e111c0a4dca525",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.18",
+        "timeStamp": 0
+      },
+      "871a30566cd7d182c010b16293d6541dd96b1d20": {
+        "id": "871a30566cd7d182c010b16293d6541dd96b1d20",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.23",
+        "timeStamp": 0
+      },
+      "8dac80335912b8a974f962b59559dda556bf5c88": {
+        "id": "8dac80335912b8a974f962b59559dda556bf5c88",
+        "authorName": "user2",
+        "authorEmailAddress": "user2@email.com",
+        "message": "US10000 - @user2 - Another commmit to update readme",
+        "tag": "1.0.25",
+        "timeStamp": 0
+      },
+      "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103": {
+        "id": "c46e8920f6da0ee287f84aa1ddb0b2383e4b1103",
+        "authorName": "user1",
+        "authorEmailAddress": "user1@email.com",
+        "message": "US10000 - @user1 - Another commmit to update readme",
+        "tag": "1.0.20",
+        "timeStamp": 0
+      }
+    }
+  }
+]

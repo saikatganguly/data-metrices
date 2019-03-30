@@ -7,8 +7,8 @@ spring:
         binder:
           brokers: localhost:9092
       bindings:
-        message-in:
-          destination: eventbus
+        jenkins-processed-data:
+          destination: jenkins-processed-data
           contentType: application/json
 
   data:

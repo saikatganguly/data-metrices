@@ -44,7 +44,7 @@ public class BuildDetailsModel {
     public BuildDetailsModel() {
     }
 
-    public BuildDetailsModel( boolean building, String description) {
+    public BuildDetailsModel(boolean building, String description) {
         this.building = building;
         this.description = description;
     }

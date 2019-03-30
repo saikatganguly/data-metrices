@@ -19,8 +19,7 @@ public class JenkinsMessageListner {
     public Map<String, List<BuildDetailsModel>> handleMessages(@Payload String buildInfo) {
         try {
             return JsonToObjectConvertor.buildJenkinsDetails(buildInfo);
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;

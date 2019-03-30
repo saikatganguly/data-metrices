@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class LogImporter {
 
     @Async
-    public void fetchLogsFromURL(String url){
+    public void fetchLogsFromURL(String url) {
         //fetch logs for each builds
     }
 }

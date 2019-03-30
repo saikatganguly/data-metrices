@@ -20,13 +20,11 @@ import javax.sql.DataSource;
 @Configuration
 public class BatchConfig extends DefaultBatchConfigurer {
     @Autowired
-    JenkinsMessageSender sender;
-
-    @Autowired
     public JobBuilderFactory jobBuilderFactory;
-
     @Autowired
     public StepBuilderFactory stepBuilderFactory;
+    @Autowired
+    JenkinsMessageSender sender;
 
     @Bean
     public Job processJob() {
@@ -38,7 +36,6 @@ public class BatchConfig extends DefaultBatchConfigurer {
     @Bean
     public Step jenkinsStep() {
         return stepBuilderFactory.get("jenkinsStep").<String, String>chunk(1).reader(new JenkinsDataImporter()).writer(sender).build();
-
     }
 
     @Bean

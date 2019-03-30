@@ -7,9 +7,9 @@ spring:
         binder:
           brokers: localhost:9092
       bindings:
-        jenkins-raw-data:
-          destination: jenkins-raw-data
-          contentType: application/json
         jenkins-processed-data:
           destination: jenkins-processed-data
+          contentType: application/json
+        bitbucket-processed-data:
+          destination: bitbucket-processed-data
           contentType: application/json

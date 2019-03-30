@@ -5,30 +5,31 @@ public class BuildDetailsModel {
     private boolean building;
     private String description;
     private String displayName;
-    private Long duration;
-    private Long estimatedDuration;
+    private String duration;
+    private String estimatedDuration;
     private String executor;
-    //private String fingerprint;
+    private String fingerprint;
     private String fullDisplayName;
     private String id;
-    private boolean keepLog;
-    private int number;
+    private String keepLog;
+    private String number;
     private String queueId;
     private String result;
-    private Long timestamp;
+    private String timestamp;
     private String url;
-    //private String changeSets;
-    //private String culprits;
+    private String changeSets;
+    private String culprits;
     private GitDetails gitDetails;
     private CauseDetails causeDetails;
 
-    public BuildDetailsModel(boolean building, String description, String displayName, Long duration, Long estimatedDuration, String executor, String fullDisplayName, String id, boolean keepLog, int number, String queueId, String result, Long timestamp, String url, GitDetails gitDetails, CauseDetails causeDetails) {
+    public BuildDetailsModel(boolean building, String description, String displayName, String duration, String estimatedDuration, String executor, String fingerprint, String fullDisplayName, String id, String keepLog, String number, String queueId, String result, String timestamp, String url, String changeSets, String culprits, GitDetails gitDetails, CauseDetails causeDetails) {
         this.building = building;
         this.description = description;
         this.displayName = displayName;
         this.duration = duration;
         this.estimatedDuration = estimatedDuration;
         this.executor = executor;
+        this.fingerprint = fingerprint;
         this.fullDisplayName = fullDisplayName;
         this.id = id;
         this.keepLog = keepLog;
@@ -37,16 +38,13 @@ public class BuildDetailsModel {
         this.result = result;
         this.timestamp = timestamp;
         this.url = url;
+        this.changeSets = changeSets;
+        this.culprits = culprits;
         this.gitDetails = gitDetails;
         this.causeDetails = causeDetails;
     }
 
     public BuildDetailsModel() {
-    }
-
-    public BuildDetailsModel( boolean building, String description) {
-        this.building = building;
-        this.description = description;
     }
 
     public boolean isBuilding() {
@@ -61,16 +59,20 @@ public class BuildDetailsModel {
         return displayName;
     }
 
-    public Long getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public Long getEstimatedDuration() {
+    public String getEstimatedDuration() {
         return estimatedDuration;
     }
 
     public String getExecutor() {
         return executor;
+    }
+
+    public String getFingerprint() {
+        return fingerprint;
     }
 
     public String getFullDisplayName() {
@@ -81,11 +83,11 @@ public class BuildDetailsModel {
         return id;
     }
 
-    public boolean getKeepLog() {
+    public String getKeepLog() {
         return keepLog;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
@@ -97,12 +99,20 @@ public class BuildDetailsModel {
         return result;
     }
 
-    public Long getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
     public String getUrl() {
         return url;
+    }
+
+    public String getChangeSets() {
+        return changeSets;
+    }
+
+    public String getCulprits() {
+        return culprits;
     }
 
     public GitDetails getGitDetails() {

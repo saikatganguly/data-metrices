@@ -63,4 +63,8 @@ public class GitCommitsView {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public void incrementCount() {
+        count++;
+    }
 }

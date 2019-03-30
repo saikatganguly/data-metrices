@@ -2,10 +2,8 @@ package app.config;
 
 
 import app.importer.JenkinsDataImporter;
-import app.listner.JobCompletionListener;
+import app.listener.JobCompletionListener;
 import app.sender.JenkinsMessageSender;
-import com.offbytwo.jenkins.model.Build;
-import com.offbytwo.jenkins.model.BuildWithDetails;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;

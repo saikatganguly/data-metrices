@@ -10,6 +10,6 @@ spring:
         binder:
           brokers: localhost:9092
       bindings:
-        message-out:
-          destination: processorbus
+        jenkins-raw-data:
+          destination: jenkins-raw-data
           contentType: application/json

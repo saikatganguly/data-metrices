@@ -21,11 +21,8 @@ import javax.sql.DataSource;
 
 @Configuration
 public class BatchConfig extends DefaultBatchConfigurer {
-
-
     @Autowired
     JenkinsMessageSender sender;
-
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;
@@ -55,5 +52,4 @@ public class BatchConfig extends DefaultBatchConfigurer {
     public void setDataSource(DataSource dataSource) {
         //This BatchConfigurer ignores any DataSource
     }
-
 }

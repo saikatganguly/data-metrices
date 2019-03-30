@@ -5,7 +5,7 @@ import org.springframework.messaging.MessageChannel;
 
 public interface OutputStream {
 
-    String OUTPUT = "message-out";
+    String OUTPUT = "jenkins-raw-data";
 
     @Output(OUTPUT)
     MessageChannel outboundChannel();

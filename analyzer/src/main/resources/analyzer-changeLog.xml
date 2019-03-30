@@ -5,17 +5,74 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <changeSet author="randeepjagtap" id="1">
-        <createTable tableName="sample">
-            <column name="id" type="VARCHAR(255)">
+        <createTable tableName="GIT_DETAILS_VIEW">
+            <column name="ID" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="name" type="VARCHAR(255)">
+            <column name="REPO" type="VARCHAR(255)">
                 <constraints nullable="false"/>
+            </column>
+            <column name="BRANCH" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COMMIT" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="true"/>
             </column>
         </createTable>
     </changeSet>
 
     <changeSet author="randeepjagtap" id="2">
-        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="sample"/>
+        <addPrimaryKey columnNames="id" constraintName="GIT_DETAILS_VIEW_KEY" tableName="GIT_DETAILS_VIEW"/>
+    </changeSet>
+
+    <changeSet author="randeepjagtap" id="3">
+        <createTable tableName="GIT_COMMITS_VIEW">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REPO" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BRANCH" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COUNT" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="randeepjagtap" id="4">
+        <addPrimaryKey columnNames="id" constraintName="GIT_COMMITS_VIEW_KEY" tableName="GIT_COMMITS_VIEW"/>
+    </changeSet>
+
+    <changeSet author="randeepjagtap" id="5">
+        <createTable tableName="BUILD_DURATION_VIEW">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REPO" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BRANCH" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="duration" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="randeepjagtap" id="6">
+        <addPrimaryKey columnNames="id" constraintName="BUILD_DURATION_VIEW_KEY" tableName="BUILD_DURATION_VIEW"/>
     </changeSet>
 </databaseChangeLog>

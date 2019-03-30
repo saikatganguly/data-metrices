@@ -1,6 +1,15 @@
 version: '3.3'
 
 services:
+  #local bitbucket setup. create your repos here.
+  bitbucket-server:
+    image: atlassian/bitbucket-server
+    restart: always
+    volumes:
+      - bitbucket-data:/var/atlassian/bitbucket
+    ports:
+    - "7990:7990"
+      
   #local jenkins setup. point your job and user dir here.
   jenkins:
     image: jenkins/jenkins:lts
@@ -10,49 +19,49 @@ services:
     ports:
     - "8080:8080"
     - "50000:50000"
-      
 
-  #zookeeper is needed for kafka cluster
-  zookeeper:
-    image: wurstmeister/zookeeper
-    ports:
-    - "2181:2181"
-
-  #Kafka is needed to create the eventbus. Depends on zookeeper
-  kafka:
-    image: wurstmeister/kafka
-    ports:
-    - "9092:9092"
-    depends_on:
-    - zookeeper
-    environment:
-      KAFKA_ADVERTISED_HOST_NAME: localhost
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_MESSAGE_MAX_BYTES: 2000000
-
-  #Mongo is our data-store
-  mongo:
-    image: mongo
-    restart: always
-    volumes:
-      - mongo-db-data:/data/db
-    ports:
-    - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-
-  #Mongo express is mongoDB web based ui
-  mongo-express:
-    image: mongo-express
-    restart: always
-    ports:
-    - "8081:8081"
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+#  #zookeeper is needed for kafka cluster
+#  zookeeper:
+#    image: wurstmeister/zookeeper
+#    ports:
+#    - "2181:2181"
+#
+#  #Kafka is needed to create the eventbus. Depends on zookeeper
+#  kafka:
+#    image: wurstmeister/kafka
+#    ports:
+#    - "9092:9092"
+#    depends_on:
+#    - zookeeper
+#    environment:
+#      KAFKA_ADVERTISED_HOST_NAME: localhost
+#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#      KAFKA_MESSAGE_MAX_BYTES: 2000000
+#
+#  #Mongo is our data-store
+#  mongo:
+#    image: mongo
+#    restart: always
+#    volumes:
+#      - mongo-db-data:/data/db
+#    ports:
+#    - "27017:27017"
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: example
+#
+#  #Mongo express is mongoDB web based ui
+#  mongo-express:
+#    image: mongo-express
+#    restart: always
+#    ports:
+#    - "8081:8081"
+#    environment:
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: example
       
 volumes:
-  mongo-db-data:
+  bitbucket-data:
   jenkins-data:
+  mongo-db-data:
   

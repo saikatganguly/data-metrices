@@ -10,6 +10,6 @@ spring:
         jenkins-raw-data:
           destination: jenkins-raw-data
           contentType: application/json
-        message-out:
-          destination: eventbus
+        jenkins-processed-data:
+          destination: jenkins-processed-data
           contentType: application/json

@@ -5,7 +5,7 @@ import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
 public interface SourceDestination {
-    String OUTPUT = "message-out";
+    String OUTPUT = "jenkins-processed-data";
     String INPUT = "jenkins-raw-data";
 
     @Output(OUTPUT)

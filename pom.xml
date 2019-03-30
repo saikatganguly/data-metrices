@@ -12,6 +12,7 @@
     <properties>
         <spring-cloud-stream.version>Fishtown.RELEASE</spring-cloud-stream.version>
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+        <liquibase.version>3.6.3</liquibase.version>
     </properties>
 
     <dependencyManagement>

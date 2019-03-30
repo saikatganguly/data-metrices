@@ -44,10 +44,14 @@ public class JsonToObjectConvertor {
                                 gitDetails.setBranch(branch.get("name") != null ? branch.get("name").asText() : "");
                                 gitDetails.setCommit(branch.get("SHA1") != null ? branch.get("SHA1").asText() : "");
                             });
-                            System.out.println(action.findValue("remoteUrls"));
-                            /*action.get("remoteUrls").iterator().forEachRemaining(repo->{
+                            /*System.out.println(action.findValue("remoteUrls"));
+                            action.get("remoteUrls").iterator().forEachRemaining(repo->{
                                 gitDetails.setRepo(repo != null ? repo.asText() : "");
                             });*/
+                            JsonNode remoteUrls = action.get("remoteUrls");
+                            if(remoteUrls != null){
+                                gitDetails.setRepo(remoteUrls.get(0).asText());
+                            }
                         }
 
                         li.add(new BuildDetailsModel(build.get("building") != null ? build.get("building").asBoolean() : false,
@@ -63,7 +67,9 @@ public class JsonToObjectConvertor {
                                 build.get("queueId") != null ? build.get("queueId").asText() : "",
                                 build.get("result") != null ? build.get("result").asText() : "",
                                 build.get("timestamp") != null ? build.get("timestamp").asLong() : 0L,
-                                build.get("url") != null ? build.get("url").asText() : "", gitDetails, causeDetails)
+                                build.get("url") != null ? build.get("url").asText() : "",
+                                gitDetails,
+                                causeDetails)
                         );
                     });
                 });

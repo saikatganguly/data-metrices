@@ -15,6 +15,14 @@
         <liquibase.version>3.6.3</liquibase.version>
     </properties>
 
+    <modules>
+        <module>jenkins-source</module>
+        <module>jenkins-processor</module>
+        <module>bitbucket-processor</module>
+        <module>sink</module>
+        <module>analyzer</module>
+    </modules>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,14 +41,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <modules>
-        <module>jenkins-source</module>
-        <module>jenkins-processor</module>
-        <module>sink</module>
-        <module>analyzer</module>
-    </modules>
-
 
     <dependencies>
         <dependency>

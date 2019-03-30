@@ -1,5 +1,6 @@
 package app.converter;
 
+import app.model.BitbucketRepo;
 import app.model.CommitInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -17,8 +18,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -28,34 +32,62 @@ public class BitbucketCollector {
 
     private static final String USERID = "asanodia";
     private static final String PASSWORD = "asanodia";
-    private static String BASE_PATH = "http://192.168.99.100:7990/rest/api/1.0/projects/";
+    private static String BASE_PATH = "http://192.168.99.100:7990";
     private static String PROJECT_NAME = "TEST-PROJECT-KEY-1";
 
-    @Autowired
-    @Qualifier("bitbucketRestTemplate")
     private RestTemplate bitbucketRestTemplate;
 
-    public void collect() {
-        String reposUrl = BASE_PATH + PROJECT_NAME + "/repos";
-        ResponseEntity<String> repos = bitbucketRestTemplate.exchange(reposUrl, HttpMethod.GET,
+    @Autowired
+    public BitbucketCollector(@Qualifier("bitbucketRestTemplate") RestTemplate bitbucketRestTemplate) {
+        this.bitbucketRestTemplate = bitbucketRestTemplate;
+    }
+
+    public List<Map<BitbucketRepo, Map<String, CommitInfo>>> collect() throws MalformedURLException {
+        BitbucketRepo bitbucketRepo = new BitbucketRepo(BASE_PATH, PROJECT_NAME);
+
+        ResponseEntity<String> repos = bitbucketRestTemplate.exchange(bitbucketRepo.getAllRepoUrl(), HttpMethod.GET,
                 new HttpEntity<>(createHeaders(USERID, PASSWORD)),
                 String.class);
         JSONObject reposParentObject = paresAsObject(repos);
         JSONArray reposArray = (JSONArray) reposParentObject.get("values");
 
+        List<Map<BitbucketRepo, Map<String, CommitInfo>>> reposInformation = new ArrayList<>();
         for (Object repo : reposArray) {
             JSONObject repoJsonObject = (JSONObject) repo;
             String repoName = str(repoJsonObject, "name");
-            System.out.println("repoName = " + repoName);
+            bitbucketRepo.setRepoName(repoName);
 
-            //Fetching commits
-            String commitsUrl = reposUrl + "/" + repoName + "/commits";
-            commits(commitsUrl);
-
-            //Fetching tags
-            String tagUrl = reposUrl + "/" + repoName + "/tags";
-            tags(tagUrl);
+            reposInformation.add(repoInformation(bitbucketRepo));
         }
+
+        return reposInformation;
+    }
+
+    public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo) throws MalformedURLException {
+
+        Map<BitbucketRepo, Map<String, CommitInfo>> map = new HashMap<>();
+
+        String partialRepoUrl = bitbucketRepo.getRepoUrl();
+
+        //Fetching commits
+        String commitsUrl = partialRepoUrl + "/commits";
+        Map<String, CommitInfo> commitInformation = commits(commitsUrl);
+
+        //Fetching tags
+        String tagUrl = partialRepoUrl + "/tags";
+        Map<String, CommitInfo> tagsInformation = tags(tagUrl);
+
+        Map<String, CommitInfo> repoInformation = merge(commitInformation, tagsInformation);
+
+        repoInformation
+                .entrySet()
+                .stream()
+                .forEach(entry -> System.out.println(entry.getValue()));
+
+        map.put(bitbucketRepo, repoInformation);
+
+        return map;
+
     }
 
     public Map<String, CommitInfo> tags(String tagUrl) {
@@ -75,8 +107,6 @@ public class BitbucketCollector {
             commitInfo.setId(commitId);
             commitInfo.setTag(tagValue);
 
-            System.out.println("     commitId = " + commitId);
-            System.out.println("     tagValue = " + tagValue);
             tagsInformation.put(commitId, commitInfo);
         }
 
@@ -108,15 +138,27 @@ public class BitbucketCollector {
             commitInfo.setAuthorEmailAddress(authorEmailAddress);
             commitInfo.setMessage(commitMessage);
 
-            System.out.println("     commitId = " + commitId);
-            System.out.println("     authorName = " + authorName);
-            System.out.println("     authorEmailAddress = " + authorEmailAddress);
-            System.out.println("     commitMessage = " + commitMessage);
-
             commitInformation.put(commitId, commitInfo);
         }
 
         return commitInformation;
+    }
+
+
+    private Map<String, CommitInfo> merge(Map<String, CommitInfo> commitInformation, Map<String, CommitInfo> tagsInformation) {
+        Map<String, CommitInfo> repoInformation = new HashMap<>();
+        commitInformation
+                .entrySet()
+                .stream()
+                .forEach(commit -> {
+                            String commitId = commit.getValue().getId();
+                            CommitInfo commitInfo = commit.getValue();
+                            CommitInfo tagsInfo = tagsInformation.get(commitId);
+                            commit.getValue().setTag(tagsInfo.getTag());
+                            repoInformation.put(commitId, commitInfo);
+                        }
+                );
+        return repoInformation;
     }
 
     private HttpHeaders createHeaders(final String userId, final String password) {

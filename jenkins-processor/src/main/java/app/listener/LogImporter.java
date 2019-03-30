@@ -1,4 +1,4 @@
-package app.listner;
+package app.listener;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;

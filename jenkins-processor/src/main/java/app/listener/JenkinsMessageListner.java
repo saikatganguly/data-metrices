@@ -1,4 +1,4 @@
-package app.listner;
+package app.listener;
 
 import app.config.SourceDestination;
 import app.converter.JsonToObjectConvertor;

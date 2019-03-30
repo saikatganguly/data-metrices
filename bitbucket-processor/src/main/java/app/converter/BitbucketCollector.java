@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.Long.valueOf;
+
 @Component
 public class BitbucketCollector {
 
@@ -128,6 +130,7 @@ public class BitbucketCollector {
             JSONObject commitJsonObject = (JSONObject) commit;
             String commitId = str(commitJsonObject, "id");
             String commitMessage = str(commitJsonObject, "message");
+            String committerTimestamp = str(commitJsonObject, "committerTimestamp");
 
             JSONObject authorObject = (JSONObject) commitJsonObject.get("author");
             String authorName = str(authorObject, "name");
@@ -137,6 +140,7 @@ public class BitbucketCollector {
             commitInfo.setAuthorName(authorName);
             commitInfo.setAuthorEmailAddress(authorEmailAddress);
             commitInfo.setMessage(commitMessage);
+            commitInfo.setTimeStamp(valueOf(committerTimestamp));
 
             commitInformation.put(commitId, commitInfo);
         }

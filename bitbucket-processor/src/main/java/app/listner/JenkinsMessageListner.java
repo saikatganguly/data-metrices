@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,11 +29,15 @@ public class JenkinsMessageListner {
 
     @StreamListener(SourceDestination.INPUT)
     @SendTo(SourceDestination.OUTPUT)
-    public Map<String, List<BuildDetailsModel>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
+    public List<Map<BitbucketRepo, Map<String, CommitInfo>>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
+
+        List<Map<BitbucketRepo, Map<String, CommitInfo>>> buildsRepoInformationList = new ArrayList<>();
 
         for (List<BuildDetailsModel> buildDetailsModels : jenkinsBuildInfo.values()) {
             for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
                 //TODO : Need to fix this model
+                //Currently it is getting all builds information for
+                //Need to revisit
                 String repoUrl = buildDetailsModel.getGitDetails().getRepo();
 
                 Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation = getRepoInformation(repoUrl);
@@ -48,9 +53,11 @@ public class JenkinsMessageListner {
                                             .forEach(entryConsumer -> System.out.println(entryConsumer.getValue()));
                                 }
                         );
+                buildsRepoInformationList.add(repoInformation);
             }
         }
-        return null;
+
+        return buildsRepoInformationList;
     }
 
     public Map<BitbucketRepo, Map<String, CommitInfo>> getRepoInformation(String repoUrl) throws MalformedURLException {

@@ -36,8 +36,8 @@
 
     <modules>
         <module>jenkins-source</module>
+        <module>jenkins-processor</module>
         <module>sink</module>
-        <module>processor</module>
         <module>analyzer</module>
     </modules>
 

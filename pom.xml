@@ -37,6 +37,7 @@
         <module>source</module>
         <module>sink</module>
         <module>processor</module>
+        <module>analyzer</module>
     </modules>
 
 

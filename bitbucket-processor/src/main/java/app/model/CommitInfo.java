@@ -1,5 +1,7 @@
 package app.model;
 
+import java.util.Objects;
+
 public class CommitInfo {
 
     private String id;
@@ -61,27 +63,18 @@ public class CommitInfo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         CommitInfo that = (CommitInfo) o;
-
-        if (timeStamp != that.timeStamp) return false;
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (authorName != null ? !authorName.equals(that.authorName) : that.authorName != null) return false;
-        if (authorEmailAddress != null ? !authorEmailAddress.equals(that.authorEmailAddress) : that.authorEmailAddress != null)
-            return false;
-        if (message != null ? !message.equals(that.message) : that.message != null) return false;
-        return tag != null ? tag.equals(that.tag) : that.tag == null;
+        return timeStamp == that.timeStamp &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(authorName, that.authorName) &&
+                Objects.equals(authorEmailAddress, that.authorEmailAddress) &&
+                Objects.equals(message, that.message) &&
+                Objects.equals(tag, that.tag);
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (authorName != null ? authorName.hashCode() : 0);
-        result = 31 * result + (authorEmailAddress != null ? authorEmailAddress.hashCode() : 0);
-        result = 31 * result + (message != null ? message.hashCode() : 0);
-        result = 31 * result + (tag != null ? tag.hashCode() : 0);
-        result = 31 * result + (int) (timeStamp ^ (timeStamp >>> 32));
-        return result;
+        return Objects.hash(id, authorName, authorEmailAddress, message, tag, timeStamp);
     }
 
     @Override

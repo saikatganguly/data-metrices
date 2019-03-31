@@ -1,4 +1,4 @@
-package app.listner;
+package app.listener;
 
 import app.converter.BitbucketCollector;
 import app.listener.JenkinsMessageListner;

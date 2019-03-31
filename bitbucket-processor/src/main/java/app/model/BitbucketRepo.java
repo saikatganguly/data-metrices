@@ -1,6 +1,7 @@
 package app.model;
 
 import java.net.MalformedURLException;
+import java.util.Objects;
 
 public class BitbucketRepo {
 
@@ -9,10 +10,6 @@ public class BitbucketRepo {
     private String hostName;
     private String projectName;
     private String repoName;
-
-    public BitbucketRepo(String hostName) {
-        this.hostName = hostName;
-    }
 
     public BitbucketRepo(String hostName, String projectName) {
         this.hostName = hostName;
@@ -57,20 +54,15 @@ public class BitbucketRepo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         BitbucketRepo that = (BitbucketRepo) o;
-
-        if (hostName != null ? !hostName.equals(that.hostName) : that.hostName != null) return false;
-        if (projectName != null ? !projectName.equals(that.projectName) : that.projectName != null) return false;
-        return repoName != null ? repoName.equals(that.repoName) : that.repoName == null;
+        return Objects.equals(hostName, that.hostName) &&
+                Objects.equals(projectName, that.projectName) &&
+                Objects.equals(repoName, that.repoName);
     }
 
     @Override
     public int hashCode() {
-        int result = hostName != null ? hostName.hashCode() : 0;
-        result = 31 * result + (projectName != null ? projectName.hashCode() : 0);
-        result = 31 * result + (repoName != null ? repoName.hashCode() : 0);
-        return result;
+        return Objects.hash(hostName, projectName, repoName);
     }
 
     @Override

@@ -25,5 +25,4 @@ public class BitbucketCollectorController {
     public List<Map<BitbucketRepo, Map<String, CommitInfo>>> collect() throws MalformedURLException {
         return bitbucketCollector.collect();
     }
-
 }

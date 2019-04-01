@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class JenkinsMessageListner {
+public class JenkinsMessageListener {
 
     @StreamListener(Channels.JENKINS_RAW_DATA)
     @SendTo(Channels.JENKINS_PROCESSED_DATA)

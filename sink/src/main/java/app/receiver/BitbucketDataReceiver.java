@@ -1,8 +1,7 @@
 package app.receiver;
 
-import app.config.InputStream;
+import app.config.Channels;
 import app.model.BitbucketRepo;
-import app.model.BuildDetailsModel;
 import app.model.CommitInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -18,7 +17,7 @@ public class BitbucketDataReceiver {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @StreamListener(InputStream.JENKINS_PROCESSED_DATA)
+    @StreamListener(Channels.JENKINS_PROCESSED_DATA)
     public void handleMessages(@Payload List<Map<BitbucketRepo, Map<String, CommitInfo>>> bitbucketRepoInfo) {
         System.out.println("bitbucketRepoInfo = " + bitbucketRepoInfo);
 

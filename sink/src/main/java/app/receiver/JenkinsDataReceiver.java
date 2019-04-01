@@ -1,6 +1,6 @@
 package app.receiver;
 
-import app.config.InputStream;
+import app.config.Channels;
 import app.model.BuildDetailsModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -16,7 +16,7 @@ public class JenkinsDataReceiver {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @StreamListener(InputStream.JENKINS_PROCESSED_DATA)
+    @StreamListener(Channels.JENKINS_PROCESSED_DATA)
     public void handleMessages(@Payload Map<String, List<BuildDetailsModel>> buildInfo) {
         System.out.println("Build info : " + buildInfo);
 

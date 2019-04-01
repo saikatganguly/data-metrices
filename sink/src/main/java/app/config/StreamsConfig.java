@@ -3,6 +3,6 @@ package app.config;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 
 
-@EnableBinding(InputStream.class)
+@EnableBinding(Channels.class)
 public class StreamsConfig {
 }

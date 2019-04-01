@@ -3,7 +3,7 @@ package app.config;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
 
-public interface InputStream {
+public interface Channels {
     String JENKINS_PROCESSED_DATA = "jenkins-processed-data";
     String BITBUCKET_PROCESSED_DATA = "bitbucket-processed-data";
 

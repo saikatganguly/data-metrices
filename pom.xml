@@ -19,6 +19,7 @@
         <module>jenkins-source</module>
         <module>jenkins-processor</module>
         <module>bitbucket-processor</module>
+        <module>sonar-processor</module>
         <module>sink</module>
         <module>analyzer</module>
     </modules>

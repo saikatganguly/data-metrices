@@ -4,9 +4,9 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
 
 public interface InputStream {
-    String INPUT = "jenkins-processed-data";
+    String JENKINS_PROCESSED_DATA = "jenkins-processed-data";
 
-    @Input(INPUT)
+    @Input(JENKINS_PROCESSED_DATA)
     SubscribableChannel inboundChannel();
 
 }

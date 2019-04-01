@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class JenkinsMesageReceiver {
+public class JenkinsDataReceiver {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @StreamListener(InputStream.INPUT)
+    @StreamListener(InputStream.JENKINS_PROCESSED_DATA)
     public void handleMessages(@Payload Map<String, List<BuildDetailsModel>> buildInfo) {
         System.out.println("Build info : " + buildInfo);
 
-        mongoTemplate.insert(buildInfo, "test1");
+        mongoTemplate.insert(buildInfo, "jenkins-processed-data");
     }
 }

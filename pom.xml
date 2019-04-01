@@ -16,6 +16,7 @@
     </properties>
 
     <modules>
+        <module>seed-data-metrices</module>
         <module>jenkins-source</module>
         <module>jenkins-processor</module>
         <module>bitbucket-processor</module>

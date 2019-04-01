@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Onboard your project here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">data-metrices.com</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height: 500px">
+
+    <div class="starter-template">
+        <h1>Onboard your project here</h1>
+
+        <div id="feedback"></div>
+
+        <form class="form-horizontal" id="search-form">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Project</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="project"/>
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Jenkins Server</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="jenkins-server"/>
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Sonar server</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sonar-server"/>
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Repo</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="repo"/>
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Build Job</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="build-job"/>
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Deploy Job</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="deploy-job"/>
+                </div>
+            </div>
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Sonar Project key</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sonar-project-key"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="bth-search"
+                            class="btn btn-primary btn-lg">Add Details
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

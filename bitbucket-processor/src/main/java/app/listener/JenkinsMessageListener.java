@@ -18,12 +18,12 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class JenkinsMessageListner {
+public class JenkinsMessageListener {
 
     private BitbucketCollector collector;
 
     @Autowired
-    public JenkinsMessageListner(BitbucketCollector collector) {
+    public JenkinsMessageListener(BitbucketCollector collector) {
         this.collector = collector;
     }
 

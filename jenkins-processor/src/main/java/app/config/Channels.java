@@ -4,7 +4,7 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface Topics {
+public interface Channels {
     String JENKINS_RAW_DATA = "jenkins-raw-data";
     String JENKINS_PROCESSED_DATA = "jenkins-processed-data";
 

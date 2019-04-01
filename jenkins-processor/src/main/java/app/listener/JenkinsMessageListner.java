@@ -1,6 +1,6 @@
 package app.listener;
 
-import app.config.Topics;
+import app.config.Channels;
 import app.converter.JsonToObjectConvertor;
 import app.model.BuildDetailsModel;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -14,8 +14,8 @@ import java.util.Map;
 @Component
 public class JenkinsMessageListner {
 
-    @StreamListener(Topics.JENKINS_RAW_DATA)
-    @SendTo(Topics.JENKINS_PROCESSED_DATA)
+    @StreamListener(Channels.JENKINS_RAW_DATA)
+    @SendTo(Channels.JENKINS_PROCESSED_DATA)
     public Map<String, List<BuildDetailsModel>> handleMessages(@Payload String buildInfo) {
         try {
             return JsonToObjectConvertor.buildJenkinsDetails(buildInfo);

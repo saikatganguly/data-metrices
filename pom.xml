@@ -22,6 +22,7 @@
         <module>sonar-processor</module>
         <module>sink</module>
         <module>analyzer</module>
+        <module>metrics-ui</module>
     </modules>
 
     <dependencyManagement>

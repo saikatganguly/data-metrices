@@ -1,12 +1,12 @@
-package app.sender;
+package app.config;
 
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface OutputStream {
+public interface Topics {
 
-    String OUTPUT = "jenkins-raw-data";
+    String JENKINS_RAW_DATA = "jenkins-raw-data";
 
-    @Output(OUTPUT)
+    @Output(JENKINS_RAW_DATA)
     MessageChannel outboundChannel();
 }

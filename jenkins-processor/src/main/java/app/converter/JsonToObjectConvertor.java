@@ -49,7 +49,7 @@ public class JsonToObjectConvertor {
                                 gitDetails.setRepo(repo != null ? repo.asText() : "");
                             });*/
                             JsonNode remoteUrls = action.get("remoteUrls");
-                            if(remoteUrls != null){
+                            if (remoteUrls != null) {
                                 gitDetails.setRepo(remoteUrls.get(0).asText());
                             }
                         }

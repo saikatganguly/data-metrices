@@ -1,11 +1,8 @@
 package app.processor;
 
 import app.entity.BuildDurationView;
-import app.entity.GitDetailsView;
 import app.model.BuildDetailsModel;
-import app.model.GitDetails;
 import app.repository.BuildDurationViewViewRepository;
-import app.repository.GitDetailsViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

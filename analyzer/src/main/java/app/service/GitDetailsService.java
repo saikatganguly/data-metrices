@@ -5,15 +5,17 @@ import app.processor.GitProcessors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.logging.Logger;
+
 import static java.util.logging.Level.SEVERE;
 
 @Component
 public class GitDetailsService {
 
-    private List<GitProcessors> processors;
     private static final Logger LOGGER = Logger.getLogger(GitDetailsService.class.getSimpleName());
+    private List<GitProcessors> processors;
 
     @Autowired
     public GitDetailsService(List<GitProcessors> processors) {

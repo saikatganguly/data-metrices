@@ -1,9 +1,7 @@
 package app.service;
 
 import app.model.BuildDetailsModel;
-import app.model.GitDetails;
 import app.processor.BuildProcessors;
-import app.processor.GitProcessors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -16,8 +14,8 @@ import static java.util.logging.Level.SEVERE;
 @Component
 public class BuildDetailsService {
 
-    private List<BuildProcessors> processors;
     private static final Logger LOGGER = Logger.getLogger(BuildDetailsService.class.getSimpleName());
+    private List<BuildProcessors> processors;
 
     @Autowired
     public BuildDetailsService(List<BuildProcessors> processors) {

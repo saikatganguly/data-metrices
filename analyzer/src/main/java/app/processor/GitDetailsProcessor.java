@@ -5,6 +5,7 @@ import app.model.GitDetails;
 import app.repository.GitDetailsViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
 import static java.util.Objects.isNull;

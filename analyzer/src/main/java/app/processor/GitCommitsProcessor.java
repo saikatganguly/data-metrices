@@ -5,7 +5,9 @@ import app.model.GitDetails;
 import app.repository.GitCommitsViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import java.util.Date;
+
 import static java.util.Objects.nonNull;
 import static java.util.UUID.randomUUID;
 

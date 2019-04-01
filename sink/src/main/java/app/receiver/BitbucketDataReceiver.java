@@ -17,7 +17,7 @@ public class BitbucketDataReceiver {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @StreamListener(Channels.JENKINS_PROCESSED_DATA)
+    @StreamListener(Channels.BITBUCKET_PROCESSED_DATA)
     public void handleMessages(@Payload List<Map<BitbucketRepo, Map<String, CommitInfo>>> bitbucketRepoInfo) {
         System.out.println("bitbucketRepoInfo = " + bitbucketRepoInfo);
 

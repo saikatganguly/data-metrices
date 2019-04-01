@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestTemplateConfiguration {
 
-    @Bean("bitbucketRestTemplate")
+    @Bean("sonarRestTemplate")
     public RestTemplate bitbucketRestTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate;

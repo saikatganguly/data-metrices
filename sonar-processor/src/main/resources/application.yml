@@ -10,6 +10,6 @@ spring:
         jenkins-processed-data:
           destination: jenkins-processed-data
           contentType: application/json
-        bitbucket-processed-data:
-          destination: bitbucket-processed-data
+        sonar-processed-data:
+          destination: sonar-processed-data
           contentType: application/json

@@ -4,13 +4,13 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface SourceDestination {
-    String INPUT = "jenkins-processed-data";
-    String OUTPUT = "bitbucket-processed-data";
+public interface Topics {
+    String JENKINS_PROCESSED_DATA = "jenkins-processed-data";
+    String BITBUCKET_PROCESSED_DATA = "bitbucket-processed-data";
 
-    @Output(OUTPUT)
+    @Output(BITBUCKET_PROCESSED_DATA)
     MessageChannel outboundChannel();
 
-    @Input(INPUT)
+    @Input(JENKINS_PROCESSED_DATA)
     MessageChannel inbountChannel();
 }

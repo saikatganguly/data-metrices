@@ -1,6 +1,6 @@
 package app.listener;
 
-import app.config.Topics;
+import app.config.Channels;
 import app.converter.BitbucketCollector;
 import app.model.BitbucketRepo;
 import app.model.BuildDetailsModel;
@@ -27,8 +27,8 @@ public class JenkinsMessageListner {
         this.collector = collector;
     }
 
-    @StreamListener(Topics.JENKINS_PROCESSED_DATA)
-    @SendTo(Topics.BITBUCKET_PROCESSED_DATA)
+    @StreamListener(Channels.JENKINS_PROCESSED_DATA)
+    @SendTo(Channels.BITBUCKET_PROCESSED_DATA)
     public List<Map<BitbucketRepo, Map<String, CommitInfo>>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
 
         List<Map<BitbucketRepo, Map<String, CommitInfo>>> buildsRepoInformationList = new ArrayList<>();

@@ -20,6 +20,15 @@ services:
     - "8080:8080"
     - "50000:50000"
 
+  #local sonarqube setup. keeps project quality metrics.
+  sonarqube:
+    image: sonarqube
+    restart: always
+    volumes:
+      - sonarqube-data:/opt/sonarqube/
+    ports:
+    - "9000:9000"
+
   #zookeeper is needed for kafka cluster
   zookeeper:
     image: wurstmeister/zookeeper
@@ -63,5 +72,6 @@ services:
 volumes:
   bitbucket-data:
   jenkins-data:
+  sonarqube-data:
   mongo-db-data:
   

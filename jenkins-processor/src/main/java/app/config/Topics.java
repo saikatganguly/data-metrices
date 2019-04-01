@@ -4,13 +4,13 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 
-public interface SourceDestination {
-    String OUTPUT = "jenkins-processed-data";
-    String INPUT = "jenkins-raw-data";
+public interface Topics {
+    String JENKINS_RAW_DATA = "jenkins-raw-data";
+    String JENKINS_PROCESSED_DATA = "jenkins-processed-data";
 
-    @Output(OUTPUT)
+    @Output(JENKINS_PROCESSED_DATA)
     MessageChannel outboundChannel();
 
-    @Input(INPUT)
+    @Input(JENKINS_RAW_DATA)
     MessageChannel inbountChannel();
 }

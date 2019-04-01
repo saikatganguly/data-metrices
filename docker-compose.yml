@@ -6,7 +6,7 @@ services:
     image: atlassian/bitbucket-server
     restart: always
     volumes:
-      - bitbucket-data:/var/atlassian/bitbucket/
+      - bitbucket-data:/var/atlassian/application-data/bitbucket/
     ports:
     - "7990:7990"
       

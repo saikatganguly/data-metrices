@@ -1,6 +1,6 @@
 package app.sender;
 
-import app.config.Topics;
+import app.config.Channels;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.MessageChannel;
@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 public class JenkinsMessageSender implements ItemWriter<String> {
     @Autowired
-    private Topics outputStream;
+    private Channels outputStream;
 
     public void write(List<? extends String> list) {
         MessageChannel messageChannel = outputStream.outboundChannel();

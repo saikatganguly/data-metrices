@@ -45,7 +45,7 @@ public class BitbucketCollector {
         this.bitbucketRestTemplate = bitbucketRestTemplate;
     }
 
-    public List<Map<BitbucketRepo, Map<String, CommitInfo>>> collect() throws MalformedURLException {
+    public List<Map<String, CommitInfo>> collect() throws MalformedURLException {
         BitbucketRepo bitbucketRepo = new BitbucketRepo(BASE_PATH, PROJECT_NAME);
 
         ResponseEntity<String> repos = bitbucketRestTemplate.exchange(bitbucketRepo.getAllRepoUrl(), HttpMethod.GET,
@@ -54,7 +54,7 @@ public class BitbucketCollector {
         JSONObject reposParentObject = paresAsObject(repos);
         JSONArray reposArray = (JSONArray) reposParentObject.get("values");
 
-        List<Map<BitbucketRepo, Map<String, CommitInfo>>> reposInformation = new ArrayList<>();
+        List<Map<String, CommitInfo>> reposInformation = new ArrayList<>();
         for (Object repo : reposArray) {
             JSONObject repoJsonObject = (JSONObject) repo;
             String repoName = str(repoJsonObject, "name");
@@ -66,17 +66,17 @@ public class BitbucketCollector {
         return reposInformation;
     }
 
-    public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo) throws MalformedURLException {
-        return repoInformation(bitbucketRepo, null, null);
+    public Map<String, CommitInfo> repoInformation(BitbucketRepo bitbucketRepo) throws MalformedURLException {
+        return repoInformation(bitbucketRepo, null);
     }
 
-    public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo, String since) throws MalformedURLException {
+    public Map<String, CommitInfo> repoInformation(BitbucketRepo bitbucketRepo, String since) throws MalformedURLException {
         return repoInformation(bitbucketRepo, since, null);
     }
 
-    public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo, String since, String until) throws MalformedURLException {
+    public Map<String, CommitInfo> repoInformation(BitbucketRepo bitbucketRepo, String since, String until) throws MalformedURLException {
 
-        Map<BitbucketRepo, Map<String, CommitInfo>> map = new HashMap<>();
+//        Map<BitbucketRepo, Map<String, CommitInfo>> map = new HashMap<>();
 
         String partialRepoUrl = bitbucketRepo.getRepoUrl();
 
@@ -103,9 +103,10 @@ public class BitbucketCollector {
                 .stream()
                 .forEach(entry -> System.out.println(entry.getValue()));
 
-        map.put(bitbucketRepo, repoInformation);
+        return repoInformation;
+//        map.put(bitbucketRepo, repoInformation);
 
-        return map;
+//        return map;
     }
 
     public Map<String, CommitInfo> tags(String tagUrl) {

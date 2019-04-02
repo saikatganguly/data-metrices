@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,9 +33,9 @@ public class JenkinsMessageListener {
 
     @StreamListener(Channels.JENKINS_PROCESSED_DATA)
     @SendTo(Channels.BITBUCKET_PROCESSED_DATA)
-    public List<Map<BitbucketRepo, Map<String, CommitInfo>>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
+    public List<Map<String, Map<String, CommitInfo>>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
 
-        List<Map<BitbucketRepo, Map<String, CommitInfo>>> buildsRepoInformationList = new ArrayList<>();
+        List<Map<String, Map<String, CommitInfo>>> buildsRepoInformationList = new ArrayList<>();
 
         for (List<BuildDetailsModel> buildDetailsModels : jenkinsBuildInfo.values()) {
             for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
@@ -49,7 +50,8 @@ public class JenkinsMessageListener {
 
                 updateLastSyncedCommit(repoUrl);
 
-                Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation = getRepoInformation(repoUrl, since, until);
+                Map<String, Map<String, CommitInfo>> repoInformation = new HashMap<>();
+                repoInformation.put(repoUrl, getRepoInformation(repoUrl, since, until));
 
                 repoInformation
                         .entrySet()
@@ -83,7 +85,7 @@ public class JenkinsMessageListener {
         //mongoTemplate.
     }
 
-    public Map<BitbucketRepo, Map<String, CommitInfo>> getRepoInformation(String repoUrl, String since, String until) throws MalformedURLException {
+    public Map<String, CommitInfo> getRepoInformation(String repoUrl, String since, String until) throws MalformedURLException {
         URL url = new URL(repoUrl);
         String hostName = url.getProtocol() + "://" + url.getAuthority();
 

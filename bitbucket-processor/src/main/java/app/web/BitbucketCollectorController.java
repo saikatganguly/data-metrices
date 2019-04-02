@@ -1,7 +1,6 @@
 package app.web;
 
 import app.converter.BitbucketCollector;
-import app.model.BitbucketRepo;
 import app.model.CommitInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +21,7 @@ public class BitbucketCollectorController {
     }
 
     @RequestMapping("/collect")
-    public List<Map<BitbucketRepo, Map<String, CommitInfo>>> collect() throws MalformedURLException {
+    public List<Map<String, CommitInfo>> collect() throws MalformedURLException {
         return bitbucketCollector.collect();
     }
 }

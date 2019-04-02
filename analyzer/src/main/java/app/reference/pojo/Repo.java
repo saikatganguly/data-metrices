@@ -1,13 +1,13 @@
 package app.reference.pojo;
 
 public class Repo {
-    public String URL;
+    public String url;
     public String buildJob;
     public String deployJob;
     private String sonarProjectKey;
 
-    public Repo(String URL, String buildJob, String deployJob, String sonarProjectKey) {
-        this.URL = URL;
+    public Repo(String url, String buildJob, String deployJob, String sonarProjectKey) {
+        this.url = url;
         this.buildJob = buildJob;
         this.deployJob = deployJob;
         this.sonarProjectKey = sonarProjectKey;
@@ -16,12 +16,12 @@ public class Repo {
     public Repo() {
     }
 
-    public String getURL() {
-        return URL;
+    public String getUrl() {
+        return url;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getBuildJob() {
@@ -51,7 +51,7 @@ public class Repo {
     @Override
     public String toString() {
         return "Repo{" +
-                "URL='" + URL + '\'' +
+                "url='" + url + '\'' +
                 ", buildJob='" + buildJob + '\'' +
                 ", deployJob='" + deployJob + '\'' +
                 ", sonarProjectKey='" + sonarProjectKey + '\'' +

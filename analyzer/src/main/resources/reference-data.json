@@ -11,11 +11,10 @@
               "projectName": "some-reference-project",
               "repos": [
                 {
-                  "URL": "some-reference-repo",
-                  "buildJob": "some-reference-build-job",
+                  "url": "some-reference-repo",
+                  "buildJob": "some-refereence-build-job",
                   "deployJob": "some-reference-deploy-job",
-                  "sonarProjectKey": "some-reference-sonar-key",
-                  "url": "some-reference-repo"
+                  "sonarProjectKey": "some-reference-sonar-key"
                 }
               ],
               "jenkinsServer": "some-reference-jenkins-server",

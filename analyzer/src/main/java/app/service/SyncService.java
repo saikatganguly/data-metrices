@@ -33,12 +33,16 @@ public class SyncService {
 
     @Async
     public void syncData(MetricesTriggerSyncRequest request) {
-        Long timeStamp = nonNull(request) && nonNull(request.getStartDate()) ? request.getStartDate().getTime() : getStartTimestamp();
-        timeStamp = processBuildDetailsModel(timeStamp);
-        updateNextStartDate(timeStamp);
+        processBuildDetails(request);
     }
 
-    private Long processBuildDetailsModel(Long timeStamp) {
+    private void processBuildDetails(MetricesTriggerSyncRequest request) {
+        Long timeStamp = nonNull(request) && nonNull(request.getStartDate()) ? request.getStartDate().getTime() : getStartTimestamp("BuildDetailsModel");
+        timeStamp = processBuildsFrom(timeStamp);
+        updateNextStartDate(timeStamp, "BuildDetailsModel");
+    }
+
+    private Long processBuildsFrom(Long timeStamp) {
         List<BuildDetailsModel> buildDetailsModels = buildDetailsModelRepository.findByTimestampGreaterThanEqual(timeStamp);
         for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
             buildDetailsService.updateGitDetails(buildDetailsModel);
@@ -49,16 +53,16 @@ public class SyncService {
         return timeStamp;
     }
 
-    private void updateNextStartDate(Long timestamp) {
-        SyncJob syncJob = syncJobRepository.findAll().get(0);
+    private void updateNextStartDate(Long timestamp, String syncJobKey) {
+        SyncJob syncJob = syncJobRepository.findById(syncJobKey).get();
         syncJob.setTimestamp(timestamp);
         syncJobRepository.save(syncJob);
     }
 
-    private Long getStartTimestamp() {
-        Optional<SyncJob> syncJob = syncJobRepository.findById("BuildDetailsModel");
+    private Long getStartTimestamp(String syncJobKey) {
+        Optional<SyncJob> syncJob = syncJobRepository.findById(syncJobKey);
         if (!syncJob.isPresent()) {
-            SyncJob job = new SyncJob("BuildDetailsModel", new Date(1999, 01, 01, 00, 00, 00).getTime());
+            SyncJob job = new SyncJob(syncJobKey, new Date(1999, 01, 01, 00, 00, 00).getTime());
             syncJobRepository.save(job);
             return job.getTimestamp();
         }

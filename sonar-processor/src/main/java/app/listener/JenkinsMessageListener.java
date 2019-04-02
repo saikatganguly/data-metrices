@@ -20,12 +20,12 @@ public class JenkinsMessageListener {
 
     private SonarqubeDataCollector collector;
 
-    @Autowired
     private MongoTemplate template;
 
     @Autowired
-    public JenkinsMessageListener(SonarqubeDataCollector collector) {
+    public JenkinsMessageListener(SonarqubeDataCollector collector, MongoTemplate template) {
         this.collector = collector;
+        this.template = template;
     }
 
     @StreamListener(SourceDestination.INPUT)

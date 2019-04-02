@@ -2,7 +2,7 @@ package app.processor;
 
 import app.entity.BuildDurationView;
 import app.model.BuildDetailsModel;
-import app.repository.BuildDurationViewViewRepository;
+import app.repository.BuildDurationViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,10 +14,10 @@ import static java.util.UUID.randomUUID;
 @Component
 public class BuildDurationProcessor implements BuildProcessors {
 
-    private BuildDurationViewViewRepository repository;
+    private BuildDurationViewRepository repository;
 
     @Autowired
-    public BuildDurationProcessor(BuildDurationViewViewRepository repository) {
+    public BuildDurationProcessor(BuildDurationViewRepository repository) {
         this.repository = repository;
     }
 

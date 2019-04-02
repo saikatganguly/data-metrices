@@ -34,18 +34,16 @@ public class ReferenceDataService {
         System.out.println("Organization Data: " + userProvidedData);
     }
 
-    public List<String> getReposByProject(String project) {
+    public List<Repo> getReposByProject(String project) {
         if (isNull(project) || project.isEmpty()) {
             return emptyList();
         }
-        List<String> repos = new ArrayList<>();
+        List<Repo> repos = new ArrayList<>();
         for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
             for (Geography geography : transactionCycle.getGeographies()) {
                 for (Project proj : geography.getProjects()) {
                     if (proj.getProjectName().equalsIgnoreCase(project)) {
-                        for (Repo repo : proj.getRepos()) {
-                            repos.add(repo.getUrl());
-                        }
+                        repos = proj.getRepos();
                     }
                 }
             }
@@ -54,49 +52,44 @@ public class ReferenceDataService {
         return repos;
     }
 
-    public List<String> getProjectsByGeography(String geography) {
+    public List<Project> getProjectsByGeography(String geography) {
         if (isNull(geography) || geography.isEmpty()) {
             return emptyList();
         }
-        List<String> projects = new ArrayList<>();
+        List<Project> projects = new ArrayList<>();
         for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
             for (Geography geo : transactionCycle.getGeographies()) {
                 if (geo.getGeographyName().equalsIgnoreCase(geography)) {
-                    for (Project project : geo.getProjects()) {
-                        projects.add(project.getProjectName());
-                    }
+                    projects = geo.getProjects();
                 }
             }
         }
         return projects;
     }
 
-    public List<String> getGeographyByTransactionCycle(String transactionCycle) {
+    public List<Geography> getGeographyByTransactionCycle(String transactionCycle) {
         if (isNull(transactionCycle) || transactionCycle.isEmpty()) {
             return emptyList();
         }
-        List<String> geographies = new ArrayList<>();
+        List<Geography> geographies = new ArrayList<>();
         for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
             if (tc.getTransactionCycleName().equalsIgnoreCase(transactionCycle)) {
-                for (Geography geography : tc.getGeographies()) {
-                    geographies.add(geography.getGeographyName());
-                }
+                geographies = tc.getGeographies();
             }
         }
         return geographies;
     }
 
-    public List<String> getTransactionCyclesByOrganization(String organization) {
+    public List<TransactionCycle> getTransactionCyclesByOrganization(String organization) {
         if (isNull(organization) || organization.isEmpty()) {
             return emptyList();
         }
-        List<String> organizations = new ArrayList<>();
+        List<TransactionCycle> organizations = new ArrayList<>();
         if (userProvidedData.getOrganizationName().equalsIgnoreCase(organization)) {
-            organizations.add(userProvidedData.getOrganizationName());
+            organizations = userProvidedData.getTransactionCycles();
         }
         return organizations;
     }
-
 
     /*public static void main(String[] args) throws IOException {
         Repo repo = new Repo("some-reference-repo","some-refereence-build-job", "some-reference-deploy-job","some-reference-sonar-key");

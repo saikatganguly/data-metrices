@@ -5,11 +5,11 @@ import app.converter.SonarqubeDataCollector;
 import app.model.BuildDetailsModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,13 +21,16 @@ public class JenkinsMessageListener {
     private SonarqubeDataCollector collector;
 
     @Autowired
+    private MongoTemplate template;
+
+    @Autowired
     public JenkinsMessageListener(SonarqubeDataCollector collector) {
         this.collector = collector;
     }
 
     @StreamListener(SourceDestination.INPUT)
     @SendTo(SourceDestination.OUTPUT)
-    public List<Map<String, String>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
+    public List<Map<String, String>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) {
 
         List<Map<String, String>> projectsQualityInformation = new ArrayList<>();
 
@@ -57,6 +60,13 @@ public class JenkinsMessageListener {
     }
 
     private String getProjectName(String repoUrl) {
+
+        //TODO: Uncomment it after having reference data in mongo
+//        Query query = new Query();
+//        query.addCriteria(Criteria.where("name").is("Eric"));
+//        List<String> projectName = template.find(query, String.class);
+//        return projectName.get(0);
+
         return "TEST-SONAR-PROJECT-KEY-1";
     }
 }

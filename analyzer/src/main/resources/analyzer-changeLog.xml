@@ -75,4 +75,20 @@
     <changeSet author="randeepjagtap" id="6">
         <addPrimaryKey columnNames="id" constraintName="BUILD_DURATION_VIEW_KEY" tableName="BUILD_DURATION_VIEW"/>
     </changeSet>
+
+    <changeSet author="randeepjagtap" id="7">
+        <createTable tableName="SYNC_JOB">
+            <column name="ID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="randeepjagtap" id="8">
+        <addPrimaryKey columnNames="id" constraintName="SYNC_JOB_KEY" tableName="SYNC_JOB"/>
+    </changeSet>
+
 </databaseChangeLog>

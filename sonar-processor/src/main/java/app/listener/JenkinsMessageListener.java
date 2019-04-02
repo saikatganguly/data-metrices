@@ -4,6 +4,7 @@ import app.config.SourceDestination;
 import app.converter.SonarqubeDataCollector;
 import app.model.BuildDetailsModel;
 import app.reference.ReferenceDataService;
+import app.reference.pojo.Repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -70,8 +71,12 @@ public class JenkinsMessageListener {
 //        List<String> projectName = template.find(query, String.class);
 //        return projectName.get(0);
 
-        //referenceDataService.getSonarProjectKeyFor(repoUrl);
+        Repo repo = referenceDataService.getRepoFromUrl(repoUrl);
 
-        return "TEST-SONAR-PROJECT-KEY-1";
+        if (repo != null) {
+            return repo.getSonarProjectKey();
+        }
+
+        return null;
     }
 }

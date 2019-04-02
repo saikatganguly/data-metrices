@@ -9,4 +9,6 @@ import java.util.Date;
 @Repository
 public interface GitCommitsViewRepository extends MongoRepository<GitCommitsView, String> {
     GitCommitsView findByRepoAndDate(String repo, Date todayDate);
+
+    Double getAverageOfDurationByRepoAndDateBetween(String repo, Date from, Date to);
 }

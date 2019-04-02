@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import static java.lang.Long.valueOf;
+import static org.springframework.util.StringUtils.isEmpty;
 
 @Component
 public class BitbucketCollector {
@@ -66,13 +67,29 @@ public class BitbucketCollector {
     }
 
     public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo) throws MalformedURLException {
+        return repoInformation(bitbucketRepo, null, null);
+    }
+
+    public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo, String since) throws MalformedURLException {
+        return repoInformation(bitbucketRepo, since, null);
+    }
+
+    public Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation(BitbucketRepo bitbucketRepo, String since, String until) throws MalformedURLException {
 
         Map<BitbucketRepo, Map<String, CommitInfo>> map = new HashMap<>();
 
         String partialRepoUrl = bitbucketRepo.getRepoUrl();
 
         //Fetching commits
-        String commitsUrl = partialRepoUrl + "/commits";
+        String commitsUrl = partialRepoUrl + "/commits?";
+
+        if (!isEmpty(since)) {
+            commitsUrl = commitsUrl + "since=" + since;
+        }
+        if (!isEmpty(until)) {
+            commitsUrl = commitsUrl + "&until=" + until;
+        }
+
         Map<String, CommitInfo> commitInformation = commits(commitsUrl);
 
         //Fetching tags

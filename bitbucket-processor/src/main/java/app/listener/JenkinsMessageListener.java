@@ -22,12 +22,12 @@ import java.util.Map;
 public class JenkinsMessageListener {
 
     private BitbucketCollector collector;
-
     private MongoTemplate mongoTemplate;
 
     @Autowired
-    public JenkinsMessageListener(BitbucketCollector collector) {
+    public JenkinsMessageListener(BitbucketCollector collector, MongoTemplate mongoTemplate) {
         this.collector = collector;
+        this.mongoTemplate = mongoTemplate;
     }
 
     @StreamListener(Channels.JENKINS_PROCESSED_DATA)
@@ -43,9 +43,11 @@ public class JenkinsMessageListener {
                 //Need to revisit
                 String repoUrl = buildDetailsModel.getGitDetails().getRepo();
 
-                getLastSyncedCommit(repoUrl);
+                String since = getLastSyncedCommit(repoUrl);
 
-                Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation = getRepoInformation(repoUrl);
+                String until = getBuildCommit(buildDetailsModel);
+
+                Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation = getRepoInformation(repoUrl, since, until);
 
                 repoInformation
                         .entrySet()
@@ -65,12 +67,16 @@ public class JenkinsMessageListener {
         return buildsRepoInformationList;
     }
 
+    private String getBuildCommit(BuildDetailsModel buildDetailsModel) {
+        return buildDetailsModel.getGitDetails().getCommit();
+    }
+
     private String getLastSyncedCommit(String repoUrl) {
         //TODO:: Use mongo to fetch last synced commit for given repo
         return "";
     }
 
-    public Map<BitbucketRepo, Map<String, CommitInfo>> getRepoInformation(String repoUrl) throws MalformedURLException {
+    public Map<BitbucketRepo, Map<String, CommitInfo>> getRepoInformation(String repoUrl, String since, String until) throws MalformedURLException {
         URL url = new URL(repoUrl);
         String hostName = url.getProtocol() + "://" + url.getAuthority();
 
@@ -83,6 +89,6 @@ public class JenkinsMessageListener {
         String repoName = splitRepoUrl[length - 1];
 
         BitbucketRepo bitbucketRepo = new BitbucketRepo(hostName, projectName, repoName);
-        return collector.repoInformation(bitbucketRepo);
+        return collector.repoInformation(bitbucketRepo, since, until);
     }
 }

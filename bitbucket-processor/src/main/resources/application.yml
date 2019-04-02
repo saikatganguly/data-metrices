@@ -13,3 +13,12 @@ spring:
         bitbucket-processed-data:
           destination: bitbucket-processed-data
           contentType: application/json
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: example
+      database: metrices-database

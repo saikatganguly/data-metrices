@@ -15,12 +15,10 @@ import static java.util.Objects.nonNull;
 @RequestMapping("/metrices/trigger")
 public class MetricesTriggerController {
 
-    private SyncJobRepository repository;
     private SyncService service;
 
     @Autowired
-    public MetricesTriggerController(SyncJobRepository repository, SyncService service) {
-        this.repository = repository;
+    public MetricesTriggerController(SyncService service) {
         this.service = service;
     }
 

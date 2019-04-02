@@ -6,14 +6,14 @@ import java.util.Date;
 public class SyncJob {
   //  @Id
     private String id;
-    private Date date;
+    private Long timestamp;
 
     public SyncJob() {
     }
 
-    public SyncJob(String id, Date date) {
+    public SyncJob(String id, Long timestamp) {
         this.id = id;
-        this.date = date;
+        this.timestamp = timestamp;
     }
 
     public String getId() {
@@ -24,11 +24,11 @@ public class SyncJob {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
+    public Long getTimestamp() {
+        return timestamp;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
     }
 }

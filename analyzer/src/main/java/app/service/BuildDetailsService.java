@@ -22,7 +22,6 @@ public class BuildDetailsService {
         this.processors = processors;
     }
 
-    @Async
     public void updateGitDetails(BuildDetailsModel model) {
         try {
             process(model);

@@ -106,7 +106,6 @@ public class BitbucketCollector {
         map.put(bitbucketRepo, repoInformation);
 
         return map;
-
     }
 
     public Map<String, CommitInfo> tags(String tagUrl) {

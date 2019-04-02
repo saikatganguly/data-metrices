@@ -47,6 +47,8 @@ public class JenkinsMessageListener {
 
                 String until = getBuildCommit(buildDetailsModel);
 
+                updateLastSyncedCommit(repoUrl);
+
                 Map<BitbucketRepo, Map<String, CommitInfo>> repoInformation = getRepoInformation(repoUrl, since, until);
 
                 repoInformation
@@ -74,6 +76,11 @@ public class JenkinsMessageListener {
     private String getLastSyncedCommit(String repoUrl) {
         //TODO:: Use mongo to fetch last synced commit for given repo
         return "";
+    }
+
+    private void updateLastSyncedCommit(String repoUrl) {
+        //TODO:: Use mongo to update last synced commit for given repo
+        //mongoTemplate.
     }
 
     public Map<BitbucketRepo, Map<String, CommitInfo>> getRepoInformation(String repoUrl, String since, String until) throws MalformedURLException {

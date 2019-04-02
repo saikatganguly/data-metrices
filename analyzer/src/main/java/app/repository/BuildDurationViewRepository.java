@@ -11,5 +11,5 @@ import java.util.List;
 public interface BuildDurationViewRepository extends JpaRepository<BuildDurationView, String> {
     BuildDurationView findByRepoAndDate(String repo, Date todayDate);
 
-    Long getAverageOfDurationByRepoAndDateBetween(String repo, Date from, Date to);
+    Double getAverageOfDurationByRepoAndDateBetween(String repo, Date from, Date to);
 }

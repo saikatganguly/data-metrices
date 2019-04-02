@@ -91,6 +91,24 @@ public class ReferenceDataService {
         return organizations;
     }
 
+    public Repo getRepoFromUrl(String repoUrl) {
+        if (isNull(repoUrl) || repoUrl.isEmpty()) {
+            return null;
+        }
+        for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
+            for (Geography geography : transactionCycle.getGeographies()) {
+                for (Project proj : geography.getProjects()) {
+                    for (Repo repo : proj.getRepos()) {
+                        if (repoUrl.equalsIgnoreCase(repo.getUrl())) {
+                            return repo;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     /*public static void main(String[] args) throws IOException {
         Repo repo = new Repo("some-reference-repo","some-refereence-build-job", "some-reference-deploy-job","some-reference-sonar-key");
         Project project = new Project("some-reference-project", asList(repo),"some-reference-jenkins-server","some-reference-sonar-server");

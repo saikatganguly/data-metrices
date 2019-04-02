@@ -11,28 +11,27 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Objects.isNull;
 
 @Service
-public class ReferenceData {
+public class ReferenceDataService {
 
-    @Value("reference-data.json")
-    private ClassPathResource file;
+    @Value("user-provided-data.json")
+    private ClassPathResource userProvidedDataFile;
 
-    private Organization data;
+    private Organization userProvidedData;
 
     @PostConstruct
     public void init() {
-        ObjectMapper om = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
         try {
-            data = om.readValue(file.getFile(), Organization.class);
+            userProvidedData = mapper.readValue(userProvidedDataFile.getFile(), Organization.class);
         } catch (IOException e) {
             System.out.println("Exception occured: " + e);
         }
 
-        System.out.println("Organization Data: "+data);
+        System.out.println("Organization Data: " + userProvidedData);
     }
 
     public List<String> getReposByProject(String project) {
@@ -40,7 +39,7 @@ public class ReferenceData {
             return emptyList();
         }
         List<String> repos = new ArrayList<>();
-        for (TransactionCycle transactionCycle : data.getTransactionCycles()) {
+        for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
             for (Geography geography : transactionCycle.getGeographies()) {
                 for (Project proj : geography.getProjects()) {
                     if (proj.getProjectName().equalsIgnoreCase(project)) {
@@ -60,7 +59,7 @@ public class ReferenceData {
             return emptyList();
         }
         List<String> projects = new ArrayList<>();
-        for (TransactionCycle transactionCycle : data.getTransactionCycles()) {
+        for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
             for (Geography geo : transactionCycle.getGeographies()) {
                 if (geo.getGeographyName().equalsIgnoreCase(geography)) {
                     for (Project project : geo.getProjects()) {
@@ -77,7 +76,7 @@ public class ReferenceData {
             return emptyList();
         }
         List<String> geographies = new ArrayList<>();
-        for (TransactionCycle tc : data.getTransactionCycles()) {
+        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
             if (tc.getTransactionCycleName().equalsIgnoreCase(transactionCycle)) {
                 for (Geography geography : tc.getGeographies()) {
                     geographies.add(geography.getGeographyName());
@@ -92,8 +91,8 @@ public class ReferenceData {
             return emptyList();
         }
         List<String> organizations = new ArrayList<>();
-        if (data.getOrganizationName().equalsIgnoreCase(organization)) {
-            organizations.add(data.getOrganizationName());
+        if (userProvidedData.getOrganizationName().equalsIgnoreCase(organization)) {
+            organizations.add(userProvidedData.getOrganizationName());
         }
         return organizations;
     }
@@ -107,7 +106,7 @@ public class ReferenceData {
         Organization org = new Organization("Barclays", asList(tc));
 
         ObjectMapper om = new ObjectMapper();
-        om.writeValue(new File("file.json"),org);
+        om.writeValue(new File("userProvidedDataFile.json"),org);
 
         String s = om.writeValueAsString(org);
         Organization organization = om.readValue(s, Organization.class);

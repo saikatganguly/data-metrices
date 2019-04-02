@@ -2,6 +2,10 @@ package app.controller;
 
 import app.controller.request.DateRange;
 import app.reference.ReferenceDataService;
+import app.reference.pojo.Geography;
+import app.reference.pojo.Project;
+import app.reference.pojo.Repo;
+import app.reference.pojo.TransactionCycle;
 import app.repository.BuildDurationViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -25,9 +30,12 @@ public class BuildDurationController {
         this.referenceDataService = referenceDataService;
     }
 
-    @RequestMapping("/reference-data/{repoName}")
-    public List<String> referenceData(@PathVariable(name = "repoName") String repoName) {
-        return referenceDataService.getReposByProject(repoName);
+    @RequestMapping("/reference-data/{projectName}")
+    public List<String> referenceData(@PathVariable(name = "projectName") String projectName) {
+        return referenceDataService.getReposByProject(projectName)
+                .stream()
+                .map(Repo::getUrl)
+                .collect(Collectors.toList());
     }
 
     @RequestMapping("/org/{transactionCycle}/{geography}/{project}/{repo}")
@@ -50,7 +58,11 @@ public class BuildDurationController {
                                                        @PathVariable String geography,
                                                        @PathVariable String project,
                                                        @RequestBody DateRange range) {
-        List<String> repos = referenceDataService.getReposByProject(project);
+        List<String> repos = referenceDataService.getReposByProject(project)
+                .stream()
+                .map(Repo::getUrl)
+                .collect(Collectors.toList());
+
         Map<String, Double> response = new HashMap<>();
         for (String repo : repos) {
             response.put(repo, buildDurationForRepo(transactionCycle, geography, project, repo, range).get(repo));
@@ -65,7 +77,11 @@ public class BuildDurationController {
     public Map<String, Double> buildDurationForGeography(@PathVariable String transactionCycle,
                                                          @PathVariable String geography,
                                                          @RequestBody DateRange range) {
-        List<String> projects = referenceDataService.getProjectsByGeography(geography);
+        List<String> projects = referenceDataService.getProjectsByGeography(geography)
+                .stream()
+                .map(Project::getProjectName)
+                .collect(Collectors.toList());
+
         Map<String, Double> response = new HashMap<>();
 
         for (String project : projects) {
@@ -87,7 +103,11 @@ public class BuildDurationController {
     @ResponseBody
     public Map<String, Double> buildDurationForTransactionCycle(@PathVariable String transactionCycle,
                                                                 @RequestBody DateRange range) {
-        List<String> geographys = referenceDataService.getGeographyByTransactionCycle(transactionCycle);
+        List<String> geographys = referenceDataService.getGeographyByTransactionCycle(transactionCycle)
+                .stream()
+                .map(Geography::getGeographyName)
+                .collect(Collectors.toList());
+
         Map<String, Double> response = new HashMap<>();
 
         for (String geography : geographys) {
@@ -108,7 +128,11 @@ public class BuildDurationController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Map<String, Double> buildDurationForOrganization(@RequestBody DateRange range) {
-        List<String> transactionCycles = referenceDataService.getTransactionCyclesByOrganization("org");
+        List<String> transactionCycles = referenceDataService.getTransactionCyclesByOrganization("org")
+                .stream()
+                .map(TransactionCycle::getTransactionCycleName)
+                .collect(Collectors.toList());
+
         Map<String, Double> response = new HashMap<>();
 
         for (String transactionCycle : transactionCycles) {

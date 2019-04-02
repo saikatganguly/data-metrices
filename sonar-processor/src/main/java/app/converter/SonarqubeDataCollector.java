@@ -21,7 +21,7 @@ public class SonarqubeDataCollector {
     }
 
     public String collect(String projectName) {
-        ResponseEntity<String> response = sonarRestTemplate.exchange(BASE_PATH + "/api/measures/component?metricKeys=ncloc,complexity,violations,coverage&component=" + projectName,
+        ResponseEntity<String> response = sonarRestTemplate.exchange(BASE_PATH + "/api/measures/component?metricKeys=ncloc,complexity,violations,coverage&componentKey=" + projectName,
                 HttpMethod.GET,
                 new HttpEntity<>(""),
                 String.class);

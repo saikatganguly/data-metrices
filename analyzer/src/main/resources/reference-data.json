@@ -1,0 +1,29 @@
+{
+  "organizationName": "Barclays",
+  "transactionCycles": [
+    {
+      "transactionCycleName": "some-reference-tc",
+      "geographies": [
+        {
+          "geographyName": "some-reference-geography",
+          "projects": [
+            {
+              "projectName": "some-reference-project",
+              "repos": [
+                {
+                  "URL": "some-reference-repo",
+                  "buildJob": "some-reference-build-job",
+                  "deployJob": "some-reference-deploy-job",
+                  "sonarProjectKey": "some-reference-sonar-key",
+                  "url": "some-reference-repo"
+                }
+              ],
+              "jenkinsServer": "some-reference-jenkins-server",
+              "sonarServer": "some-reference-sonar-server"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

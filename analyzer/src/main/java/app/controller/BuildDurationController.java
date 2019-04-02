@@ -26,7 +26,7 @@ public class BuildDurationController {
         this.repository = repository;
     }
 
-    @RequestMapping("/barclays/{transactionCycle}/{geography}/{project}/{repo}")
+    @RequestMapping("/org/{transactionCycle}/{geography}/{project}/{repo}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Map<String, Long> buildDurationForRepo(@PathVariable String transactionCycle,
@@ -39,10 +39,10 @@ public class BuildDurationController {
         return response;
     }
 
-    @RequestMapping("/barclays/{transactionCycle}/{geography}/{project}")
+    @RequestMapping("/org/{transactionCycle}/{geography}/{project}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Long> buildDurationForRepos(@PathVariable String transactionCycle,
+    public Map<String, Long> buildDurationForProject(@PathVariable String transactionCycle,
                                                          @PathVariable String geography,
                                                          @PathVariable String project,
                                                          @RequestBody DateRange range) {
@@ -55,28 +55,28 @@ public class BuildDurationController {
         return response;
     }
 
-    @RequestMapping("/barclays/{transactionCycle}/{geography}")
+    @RequestMapping("/org/{transactionCycle}/{geography}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<BuildDurationView> buildDurationForProject(@PathVariable String transactionCycle,
+    public List<BuildDurationView> buildDurationForGeography(@PathVariable String transactionCycle,
                                                            @PathVariable String geography,
                                                            @RequestBody DateRange range) {
         return null;
     }
 
-    @RequestMapping("/barclays/{transactionCycle}")
+    @RequestMapping("/org/{transactionCycle}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<BuildDurationView> buildDurationForGeography(@PathVariable String transactionCycle,
+    public List<BuildDurationView> buildDurationForTransactionCycle(@PathVariable String transactionCycle,
                                                              @PathVariable String geography,
                                                              @RequestBody DateRange range) {
         return null;
     }
 
-    @RequestMapping("/barclays")
+    @RequestMapping("/org")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<BuildDurationView> buildDurationForTransactionCycle(@PathVariable String transactionCycle,
+    public List<BuildDurationView> buildDurationForOrganization(@PathVariable String transactionCycle,
                                                                     @PathVariable String geography,
                                                                     @RequestBody DateRange range) {
         return null;

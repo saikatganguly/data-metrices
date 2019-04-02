@@ -62,7 +62,7 @@ public class ReferenceData {
     }
 
 
-    public static void main(String[] args) throws IOException {
+    /*public static void main(String[] args) throws IOException {
         Repo repo = new Repo("some-reference-repo","some-refereence-build-job", "some-reference-deploy-job","some-reference-sonar-key");
         Project project = new Project("some-reference-project", asList(repo),"some-reference-jenkins-server","some-reference-sonar-server");
         Geography geography = new Geography("some-reference-geography", asList(project));
@@ -75,5 +75,5 @@ public class ReferenceData {
         String s = om.writeValueAsString(org);
         Organization organization = om.readValue(s, Organization.class);
         System.out.println(organization);
-    }
+    }*/
 }

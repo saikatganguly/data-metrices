@@ -3,6 +3,7 @@ package app.listener;
 import app.config.SourceDestination;
 import app.converter.SonarqubeDataCollector;
 import app.model.BuildDetailsModel;
+import app.reference.ReferenceDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -21,6 +22,8 @@ public class JenkinsMessageListener {
     private SonarqubeDataCollector collector;
 
     private MongoTemplate template;
+
+    private ReferenceDataService referenceDataService;
 
     @Autowired
     public JenkinsMessageListener(SonarqubeDataCollector collector, MongoTemplate template) {
@@ -66,6 +69,8 @@ public class JenkinsMessageListener {
 //        query.addCriteria(Criteria.where("name").is("Eric"));
 //        List<String> projectName = template.find(query, String.class);
 //        return projectName.get(0);
+
+        //referenceDataService.getSonarProjectKeyFor(repoUrl);
 
         return "TEST-SONAR-PROJECT-KEY-1";
     }

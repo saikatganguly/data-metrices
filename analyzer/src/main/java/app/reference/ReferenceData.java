@@ -7,25 +7,16 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
+import static java.util.Objects.isNull;
 
 @Service
 public class ReferenceData {
-
-    public static final List<String> REPOS1 = asList("sampleRepo");
-    public static final List<String> REPOS2 = asList("sampleRepo");
-    public static final List<String> PROJECTS1 = asList("CardNG");
-    public static final List<String> PROJECTS2 = asList("CL");
-    public static final List<String> GEOGRAPHY1 = asList("CardNG");
-    public static final List<String> GEOGRAPHY2 = asList("CL");
-    public static final List<String> TRANSACTION_CYCLE1 = asList("Card");
-    public static final List<String> TRANSACTION_CYCLE2 = asList("Payment");
 
     @Value("reference-data.json")
     private ClassPathResource file;
@@ -40,25 +31,71 @@ public class ReferenceData {
         } catch (IOException e) {
             System.out.println("Exception occured: " + e);
         }
+
+        System.out.println("Organization Data: "+data);
     }
 
     public List<String> getReposByProject(String project) {
-        return REPOS1;
+        if (isNull(project) || project.isEmpty()) {
+            return emptyList();
+        }
+        List<String> repos = new ArrayList<>();
+        for (TransactionCycle transactionCycle : data.getTransactionCycles()) {
+            for (Geography geography : transactionCycle.getGeographies()) {
+                for (Project proj : geography.getProjects()) {
+                    if (proj.getProjectName().equalsIgnoreCase(project)) {
+                        for (Repo repo : proj.getRepos()) {
+                            repos.add(repo.getUrl());
+                        }
+                    }
+                }
+            }
+        }
+
+        return repos;
     }
 
     public List<String> getProjectsByGeography(String geography) {
-        Map<String, List<String>> response = new HashMap<>();
-        response.put("US", PROJECTS1);
-        response.put("UK", PROJECTS2);
-        return PROJECTS1;
+        if (isNull(geography) || geography.isEmpty()) {
+            return emptyList();
+        }
+        List<String> projects = new ArrayList<>();
+        for (TransactionCycle transactionCycle : data.getTransactionCycles()) {
+            for (Geography geo : transactionCycle.getGeographies()) {
+                if (geo.getGeographyName().equalsIgnoreCase(geography)) {
+                    for (Project project : geo.getProjects()) {
+                        projects.add(project.getProjectName());
+                    }
+                }
+            }
+        }
+        return projects;
     }
 
     public List<String> getGeographyByTransactionCycle(String transactionCycle) {
-        return GEOGRAPHY1;
+        if (isNull(transactionCycle) || transactionCycle.isEmpty()) {
+            return emptyList();
+        }
+        List<String> geographies = new ArrayList<>();
+        for (TransactionCycle tc : data.getTransactionCycles()) {
+            if (tc.getTransactionCycleName().equalsIgnoreCase(transactionCycle)) {
+                for (Geography geography : tc.getGeographies()) {
+                    geographies.add(geography.getGeographyName());
+                }
+            }
+        }
+        return geographies;
     }
 
-    public List<String> getTransactionCyclesByOrg(String org) {
-        return TRANSACTION_CYCLE1;
+    public List<String> getTransactionCyclesByOrganization(String organization) {
+        if (isNull(organization) || organization.isEmpty()) {
+            return emptyList();
+        }
+        List<String> organizations = new ArrayList<>();
+        if (data.getOrganizationName().equalsIgnoreCase(organization)) {
+            organizations.add(data.getOrganizationName());
+        }
+        return organizations;
     }
 
 

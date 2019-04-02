@@ -101,7 +101,7 @@ public class BuildDurationController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Map<String, Double> buildDurationForOrganization(@RequestBody DateRange range) {
-        List<String> transactionCycles = referenceData.getTransactionCyclesByOrg("org");
+        List<String> transactionCycles = referenceData.getTransactionCyclesByOrganization("org");
         Map<String, Double> response = new HashMap<>();
 
         for (String transactionCycle : transactionCycles) {

@@ -1,12 +1,10 @@
 package app.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
+//@Entity
 public class BuildDurationView {
-    @Id
+  //  @Id
     private String id;
     private String repo;
     private String branch;

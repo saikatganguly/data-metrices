@@ -1,12 +1,10 @@
 package app.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
+//@Entity
 public class SyncJob {
-    @Id
+  //  @Id
     private String id;
     private Date date;
 

@@ -1,7 +1,7 @@
 package app.listener;
 
 import app.config.SourceDestination;
-import app.converter.SonarqubeDataCollector;
+import app.collector.SonarqubeDataCollector;
 import app.model.BuildDetailsModel;
 import app.reference.ReferenceDataService;
 import app.reference.pojo.Repo;

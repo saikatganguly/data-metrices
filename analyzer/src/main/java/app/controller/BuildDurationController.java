@@ -52,8 +52,6 @@ public class BuildDurationController {
                                                     @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         Map<String, Double> response = new HashMap<>();
 
-        //repo = "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git";
-
         Repo repo1 = referenceDataService.getRepo(repo);
 
         double average = repository
@@ -78,8 +76,9 @@ public class BuildDurationController {
                                             @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                             @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
 
+        Repo repo1 = referenceDataService.getRepo(repo);
         return repository
-                .findByRepoAndDateBetween(repo, fromDate, toDate)
+                .findByRepoAndDateBetween(repo1.getUrl(), fromDate, toDate)
                 .stream()
                 .map(view -> view.getDuration())
                 .collect(Collectors.toList());
@@ -93,7 +92,7 @@ public class BuildDurationController {
                                                        @PathVariable String project,
                                                        @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                        @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> repos = referenceDataService.getReposByProject(project)
+        List<String> repos = referenceDataService.getReposByProject(transactionCycle, geography, project)
                 .stream()
                 .map(Repo::getName)
                 .collect(Collectors.toList());
@@ -114,7 +113,7 @@ public class BuildDurationController {
                                                          @PathVariable String geography,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> projects = referenceDataService.getProjectsByGeography(geography)
+        List<String> projects = referenceDataService.getProjectsByGeography(transactionCycle, geography)
                 .stream()
                 .map(Project::getProjectName)
                 .collect(Collectors.toList());

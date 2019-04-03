@@ -42,7 +42,7 @@ public class SyncService {
     }
 
     private String processBuildsFrom(String jobId) {
-        List<BuildDetailsModel> buildDetailsModels = buildDetailsModelRepository.findByIdGreaterThan(jobId);
+        List<BuildDetailsModel> buildDetailsModels = buildDetailsModelRepository.findAll();
         for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
             buildDetailsService.updateBuildDetails(buildDetailsModel);
             jobId = buildDetailsModel.getId();

@@ -1,0 +1,2463 @@
+{
+  "buildDetailsModels": [
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "5220a999-589e-4654-86a0-a71eb63d585c",
+      "duration": 583,
+      "estimatedDuration": 400,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "101",
+      "keepLog": true,
+      "number": 61,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555871400000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "e898ba1e-897d-4adc-8f36-320c00d2ca3f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "67caedd7-3393-4634-b867-c662ca543faf",
+      "duration": 639,
+      "estimatedDuration": 397,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "102",
+      "keepLog": true,
+      "number": 38,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "873bb3f3-766a-458e-a077-72bcf776e14f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "d53e2029-3861-4bf1-85fc-828c9334762b",
+      "duration": 591,
+      "estimatedDuration": 359,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "103",
+      "keepLog": true,
+      "number": 7,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555612200000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "315e647e-53a7-4184-bba4-83675e797499"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "f4fc66b4-3997-48f8-9280-ff025afd31b2",
+      "duration": 610,
+      "estimatedDuration": 370,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "104",
+      "keepLog": true,
+      "number": 13,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555871400000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "05f70bfe-36ea-4a19-bb73-7a13b2b7239e"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c1e9a2b8-f556-4fe1-841d-32a4519a1d06",
+      "duration": 737,
+      "estimatedDuration": 360,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "105",
+      "keepLog": true,
+      "number": 21,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555785000000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "cfdfa507-3943-4a60-9da8-49c338299978"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "ee7f9afe-2dc1-4841-9213-a69cc15b149f",
+      "duration": 572,
+      "estimatedDuration": 384,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "106",
+      "keepLog": true,
+      "number": 11,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "5db4f50c-223b-4a2e-bc68-8e7073781856"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "6e5d9b99-4dbd-429b-ab04-cf865879958c",
+      "duration": 628,
+      "estimatedDuration": 398,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "107",
+      "keepLog": true,
+      "number": 67,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "bde137fa-bf5a-4141-9a75-3ef505a66cb9"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "97edeb95-44b1-4485-8d00-99677434c1aa",
+      "duration": 526,
+      "estimatedDuration": 371,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "108",
+      "keepLog": true,
+      "number": 39,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555698600000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "3a55d3d4-2bb2-4945-b026-24118def8565"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "ffa50284-5ab9-4b92-841c-209667964d99",
+      "duration": 707,
+      "estimatedDuration": 356,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "109",
+      "keepLog": true,
+      "number": 54,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555266600000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "a6287c2f-8ab2-4f18-83c1-4dcfeea3cb5f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "75097e16-17b5-434e-8ce5-e43ca44cbff1",
+      "duration": 507,
+      "estimatedDuration": 379,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "110",
+      "keepLog": true,
+      "number": 31,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555698600000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "28f28159-5332-4646-b222-a08993f2f2f5"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "19b4e9e3-a139-444e-89fc-7d126a1b75f4",
+      "duration": 689,
+      "estimatedDuration": 380,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "111",
+      "keepLog": true,
+      "number": 66,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555785000000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "76535311-9b14-41b7-ac21-e37d61118850"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "dbcaac2f-687b-4cd1-9015-668b4da60e8c",
+      "duration": 677,
+      "estimatedDuration": 377,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "112",
+      "keepLog": true,
+      "number": 17,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "61b23bd2-4104-4083-9cb0-b63b97f92bf1"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "48c9c7f7-9b69-4845-93e0-7bf2467e36d0",
+      "duration": 723,
+      "estimatedDuration": 386,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "113",
+      "keepLog": true,
+      "number": 37,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "c3500f2c-120b-4abe-a79b-7882ccdef565"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "0775f469-d094-438f-a203-4462ac5e9bf2",
+      "duration": 573,
+      "estimatedDuration": 351,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-1",
+      "id": "114",
+      "keepLog": true,
+      "number": 78,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "cardNG-repo-url-1",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-1",
+        "branch": "master",
+        "commit": "02323d21-4829-4299-a84f-e3e83db89940"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "28e29ffc-e7ff-474a-9b17-4c997acc34bf",
+      "duration": 612,
+      "estimatedDuration": 360,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "115",
+      "keepLog": true,
+      "number": 81,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555957800000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "7aa27406-a276-4f2e-ba20-d699ae954372"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "66a05d59-bd6e-4d1c-bf84-bbef62f30a1b",
+      "duration": 750,
+      "estimatedDuration": 385,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "116",
+      "keepLog": true,
+      "number": 50,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "fd18ab4e-7594-4f4e-8840-9446f5824d93"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "9ce1975e-f8dd-428e-8735-8149fe7fdd01",
+      "duration": 539,
+      "estimatedDuration": 375,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "117",
+      "keepLog": true,
+      "number": 72,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555785000000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "f2072b3d-16d1-49c4-b2c8-08fd16342578"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "fbd27c85-3776-4be6-8b92-bee30d3ed3ae",
+      "duration": 632,
+      "estimatedDuration": 378,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "118",
+      "keepLog": true,
+      "number": 35,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555785000000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "aaf89ec9-b48d-46da-9739-5fe1bce06e04"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "9aea74a1-2087-4dd7-8130-b4d7b21f8f4b",
+      "duration": 624,
+      "estimatedDuration": 358,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "119",
+      "keepLog": true,
+      "number": 38,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "09cb4506-13ae-4bf7-9800-fa5a1aa66251"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c270054b-a2bb-4ab9-a5ec-9e95a99efef1",
+      "duration": 715,
+      "estimatedDuration": 381,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "120",
+      "keepLog": true,
+      "number": 93,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "d80e4a69-7e95-4931-aa21-d7d18c4c3701"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "fccc1402-5e94-4ce8-a5d9-bf4e3db2f85b",
+      "duration": 641,
+      "estimatedDuration": 394,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "121",
+      "keepLog": true,
+      "number": 72,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556303400000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "7a86bd71-36fe-42d1-b560-bbf4b1e3f216"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "f93f2f66-7cd4-457b-9cee-23b8a29991c0",
+      "duration": 644,
+      "estimatedDuration": 353,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "122",
+      "keepLog": true,
+      "number": 28,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555525800000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "b90a84c6-2a8a-415a-8a4e-8a3ac75f053a"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "e29d48fe-3e6b-48f9-a10b-bc7689cf4120",
+      "duration": 756,
+      "estimatedDuration": 400,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "123",
+      "keepLog": true,
+      "number": 24,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "96c5d9d5-db3e-4c9f-a719-e2ed1080e64b"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "315413eb-caf8-4515-9965-1b5791cb4a44",
+      "duration": 658,
+      "estimatedDuration": 392,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "124",
+      "keepLog": true,
+      "number": 21,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "8233c1ad-f1e4-408f-b4b4-3a10c474bdfe"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "246408a1-b58c-4007-ad83-6a3f92a2100c",
+      "duration": 768,
+      "estimatedDuration": 364,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "125",
+      "keepLog": true,
+      "number": 34,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "3b6e3239-ff41-4c9f-8a93-22215c7a5ab7"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "b63b9f0c-e53f-4ad0-8d96-1f93a33f90dd",
+      "duration": 785,
+      "estimatedDuration": 364,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "126",
+      "keepLog": true,
+      "number": 96,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556389800000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "43376744-5e2a-41fd-ace7-8dfe7a02564f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "69f9b7b2-03ce-45b5-bba3-6bbd41720567",
+      "duration": 764,
+      "estimatedDuration": 399,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-2",
+      "id": "127",
+      "keepLog": true,
+      "number": 42,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555525800000,
+      "url": "cardNG-repo-url-2",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-2",
+        "branch": "master",
+        "commit": "b801500b-0f71-4bb9-a171-6b05d0ef046f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "6cdfca4b-fc37-46e8-a2f5-8468779cdd34",
+      "duration": 535,
+      "estimatedDuration": 356,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "128",
+      "keepLog": true,
+      "number": 88,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555180200000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "2078501b-0bc5-4afc-98f1-b91f7c6e6fc9"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "d845d278-859a-4de7-bbdc-9a571120b62f",
+      "duration": 687,
+      "estimatedDuration": 367,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "129",
+      "keepLog": true,
+      "number": 25,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555612200000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "7d3933d1-d72e-4151-af1a-50677e84051e"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "d0c12431-6074-48a3-8cce-1fc362ec2076",
+      "duration": 593,
+      "estimatedDuration": 378,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "130",
+      "keepLog": true,
+      "number": 12,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555266600000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "9aacbc30-e13f-4d4c-b8ce-c17e7c9c6eb5"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "ba75f17e-cfeb-4c03-a784-9eb878d0fa4c",
+      "duration": 772,
+      "estimatedDuration": 350,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "131",
+      "keepLog": true,
+      "number": 21,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555180200000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "2d9f412e-bb4f-4a59-a641-f2ab57265e59"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "0a1d0479-ab3c-469d-8cc6-dbe8db606717",
+      "duration": 507,
+      "estimatedDuration": 353,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "132",
+      "keepLog": true,
+      "number": 79,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "4e5dbf11-e28d-4587-819a-585339ced75b"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "20fdac19-0e3b-49b2-ba5e-de847bc1cb48",
+      "duration": 740,
+      "estimatedDuration": 351,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "133",
+      "keepLog": true,
+      "number": 79,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555525800000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "ff1092ab-6b7d-4fd9-9c9a-e745610119fe"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "1e98da49-0609-4b3b-8671-7e959630faa3",
+      "duration": 761,
+      "estimatedDuration": 354,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "134",
+      "keepLog": true,
+      "number": 82,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555525800000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "a5c4fa9e-b8ae-4e1b-81ce-20a5492d8b4e"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "8b6bfcf5-d224-4613-9308-0902899bc3ca",
+      "duration": 543,
+      "estimatedDuration": 379,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "135",
+      "keepLog": true,
+      "number": 97,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "d0d54778-05fd-46f0-9ac7-b634ae4b64a8"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "3eaea107-ce78-40af-abf1-bb88a9458915",
+      "duration": 670,
+      "estimatedDuration": 392,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "136",
+      "keepLog": true,
+      "number": 29,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "ce34a2fa-e7bc-4691-bd47-a2a6ce6f8e6e"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "7ad37d3f-7159-4275-aa1a-0d0f85478536",
+      "duration": 573,
+      "estimatedDuration": 364,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "137",
+      "keepLog": true,
+      "number": 34,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555266600000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "ca07e3d4-8366-472d-84b6-ee4735e2b701"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "b3949ba4-001c-4eeb-bf83-701b22a7855e",
+      "duration": 602,
+      "estimatedDuration": 360,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "138",
+      "keepLog": true,
+      "number": 2,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555871400000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "cd58ca5e-567a-4be3-ad4b-ad20efb1a67c"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "d2803618-42d3-4f9d-996b-7c0ec46b89f8",
+      "duration": 672,
+      "estimatedDuration": 358,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "139",
+      "keepLog": true,
+      "number": 19,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "14ad6677-2b5a-4652-9c4e-e0d31691fb38"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "aee35e38-9b96-4911-a4bd-b98bd2c283ff",
+      "duration": 774,
+      "estimatedDuration": 357,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "140",
+      "keepLog": true,
+      "number": 43,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555612200000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "9c5ada55-0a46-438c-b6ec-42410c1f19a0"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "b7c18d3c-969c-4efd-9259-97633a04a904",
+      "duration": 549,
+      "estimatedDuration": 395,
+      "executor": "executor",
+      "fullDisplayName": "cardNG-build-job-3",
+      "id": "141",
+      "keepLog": true,
+      "number": 44,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "cardNG-repo-url-3",
+      "gitDetails": {
+        "repo": "cardNG-repo-url-3",
+        "branch": "master",
+        "commit": "c758b76c-2017-4a08-aa08-7bb9e60eba9a"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "576e6993-0184-4afd-9125-427c42f5b7d6",
+      "duration": 515,
+      "estimatedDuration": 373,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "142",
+      "keepLog": true,
+      "number": 92,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555525800000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "75fa9c49-11f7-48a9-8d5b-7b6690e6a404"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "2dd5a9be-ac7b-4114-87db-c9cde6004e1d",
+      "duration": 696,
+      "estimatedDuration": 393,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "143",
+      "keepLog": true,
+      "number": 73,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "d4f4694c-7265-49aa-a9c8-50b7d2116a61"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "a3b07341-1ea5-49e0-873e-729c3360d28c",
+      "duration": 545,
+      "estimatedDuration": 379,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "144",
+      "keepLog": true,
+      "number": 50,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555957800000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "581e1362-fbae-4c20-af4e-5eab6c8cb46f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "793d3321-ee58-45a7-8f68-8960fd5e2e80",
+      "duration": 643,
+      "estimatedDuration": 351,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "145",
+      "keepLog": true,
+      "number": 75,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "7aa785c0-cdf8-44df-9e03-5f0f42d794d8"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "13d3f84a-f29e-4bc0-8278-3ee1a95fca5e",
+      "duration": 571,
+      "estimatedDuration": 367,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "146",
+      "keepLog": true,
+      "number": 90,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555871400000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "44212463-ff34-491e-85b9-c38af73d2050"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "1b1d9705-2b96-41ef-b6d3-d913b8235b87",
+      "duration": 533,
+      "estimatedDuration": 378,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "147",
+      "keepLog": true,
+      "number": 14,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555612200000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "5c809616-5e9c-49dc-8e55-db396aeb879b"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "75d260fb-07e0-4341-824f-faf55cd61abc",
+      "duration": 533,
+      "estimatedDuration": 370,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "148",
+      "keepLog": true,
+      "number": 81,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555525800000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "49119d58-00b7-47a0-a1e5-6dba1eb64067"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "83338bfe-c44a-4290-8883-a4cfa42446ac",
+      "duration": 688,
+      "estimatedDuration": 369,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "149",
+      "keepLog": true,
+      "number": 94,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556303400000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "8e7ae917-9908-4fc7-95ea-91a8b18aaa16"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "4a9c27f2-9c3f-4f9a-86ff-009cdcc960c1",
+      "duration": 507,
+      "estimatedDuration": 372,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "150",
+      "keepLog": true,
+      "number": 7,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "d7b9a88e-8080-4979-9f39-3d2a9da8af4f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "9958a0e0-c795-4c78-9f8c-639e7c3326a8",
+      "duration": 632,
+      "estimatedDuration": 373,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "151",
+      "keepLog": true,
+      "number": 62,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555266600000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "1d26491c-3d00-4791-9f08-169339a93906"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c8259a6f-5393-4aaa-95b0-4162df739c90",
+      "duration": 650,
+      "estimatedDuration": 351,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "152",
+      "keepLog": true,
+      "number": 4,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556389800000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "0c77c4f7-75fd-47c3-96b6-452f8949d7f4"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "eeb69328-2a3e-4960-8c2f-2327ed4c8a41",
+      "duration": 643,
+      "estimatedDuration": 369,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "153",
+      "keepLog": true,
+      "number": 65,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "875802c6-5ead-4ab4-87b3-75b3ed8a155b"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "b3d746c1-ceba-450c-a11d-fc1bd29ae69e",
+      "duration": 664,
+      "estimatedDuration": 384,
+      "executor": "executor",
+      "fullDisplayName": "collections-build-job",
+      "id": "154",
+      "keepLog": true,
+      "number": 23,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555180200000,
+      "url": "Collections-repo-url-1",
+      "gitDetails": {
+        "repo": "Collections-repo-url-1",
+        "branch": "master",
+        "commit": "42cf0071-91aa-42eb-b184-b49169fd5fe1"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "1e19d678-6cec-4d80-85a6-61a885aab88a",
+      "duration": 748,
+      "estimatedDuration": 387,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "155",
+      "keepLog": true,
+      "number": 67,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555871400000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "fe48f73e-41e4-499f-8e8f-41707bdc78d4"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "ffb10617-6733-4303-b644-3200d7d27376",
+      "duration": 579,
+      "estimatedDuration": 374,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "156",
+      "keepLog": true,
+      "number": 83,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555698600000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "7e6a1180-7ded-4444-ae49-1015602d673d"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "26e7b957-9e01-4b39-9a2d-851eb8a7d201",
+      "duration": 794,
+      "estimatedDuration": 399,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "157",
+      "keepLog": true,
+      "number": 70,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "1d70e211-54e2-4c59-aaa7-9d56dc2bbe43"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "32b952e9-c6ab-4ad2-8e8a-f47e641c2270",
+      "duration": 735,
+      "estimatedDuration": 362,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "158",
+      "keepLog": true,
+      "number": 47,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "522e626d-bf36-491a-836b-5b152745e9cf"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "ff76b3c7-7f01-4318-8a63-4b444ad79f79",
+      "duration": 757,
+      "estimatedDuration": 398,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "159",
+      "keepLog": true,
+      "number": 44,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555698600000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "5f418454-9d3f-4b6f-af87-21031c0e86bd"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c6e1475c-246f-4334-9d4e-6a52a136ff62",
+      "duration": 775,
+      "estimatedDuration": 393,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "160",
+      "keepLog": true,
+      "number": 15,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555871400000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "a1485167-a3a4-441a-b6d2-0f1c6980550d"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "21a4c4a8-38b5-4a32-8d13-e873b09f25dc",
+      "duration": 531,
+      "estimatedDuration": 363,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "161",
+      "keepLog": true,
+      "number": 97,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "9fb21387-76a5-4e06-85ed-8d87bafcd43f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c09bf026-4821-4056-bc66-644f56bd225f",
+      "duration": 724,
+      "estimatedDuration": 371,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "162",
+      "keepLog": true,
+      "number": 47,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556303400000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "df067ffc-2c82-4a00-81a0-0ee61d7ca20f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "310fde84-ef70-40f7-a2c0-adf2845464ca",
+      "duration": 693,
+      "estimatedDuration": 388,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "163",
+      "keepLog": true,
+      "number": 2,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "557d28f5-0098-4ddb-aa1e-e1952a795868"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "9af7b2be-b57f-4b07-bc87-92f8e3f3881c",
+      "duration": 685,
+      "estimatedDuration": 373,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "164",
+      "keepLog": true,
+      "number": 42,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "41db3be2-d9ca-4b93-a496-7f421e6e3a93"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "d2215906-678d-4ede-af12-eab37c9a10c8",
+      "duration": 730,
+      "estimatedDuration": 380,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "165",
+      "keepLog": true,
+      "number": 58,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556389800000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "fa377fd5-7366-478a-87f7-6e7737b93512"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "9c692717-ed6a-4bdd-b281-3a6873fbd63e",
+      "duration": 716,
+      "estimatedDuration": 363,
+      "executor": "executor",
+      "fullDisplayName": "some-UK-build-job-1",
+      "id": "166",
+      "keepLog": true,
+      "number": 56,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556389800000,
+      "url": "some-UK-repo-url-1",
+      "gitDetails": {
+        "repo": "some-UK-repo-url-1",
+        "branch": "master",
+        "commit": "7a84bad8-f042-484b-9937-7e074f0438c2"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "e631b806-9479-4f99-89bc-da8eb0742770",
+      "duration": 512,
+      "estimatedDuration": 367,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "167",
+      "keepLog": true,
+      "number": 46,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "3b10e47c-e89c-431e-94b1-caac30fbeff1"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "906251a3-2c4c-44a2-bd93-484913d6c84f",
+      "duration": 551,
+      "estimatedDuration": 352,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "168",
+      "keepLog": true,
+      "number": 91,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "f9a73168-78d5-49ec-aa50-01a08d1e6dce"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "22fa955e-dbc7-4ba4-8c65-9a1763757f2f",
+      "duration": 791,
+      "estimatedDuration": 355,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "169",
+      "keepLog": true,
+      "number": 51,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555698600000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "42111255-5aab-47de-8ac0-836caf35b9d8"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "530ed36b-fdf0-43fe-8841-f643dd61f4d8",
+      "duration": 591,
+      "estimatedDuration": 377,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "170",
+      "keepLog": true,
+      "number": 31,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555785000000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "792745e7-310b-436a-bf9d-e0962ba29aff"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "b563f3ca-73c4-4fc9-9f24-fdd456698029",
+      "duration": 595,
+      "estimatedDuration": 372,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "171",
+      "keepLog": true,
+      "number": 32,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "f5cacb01-cd4c-408a-8a5f-6bd2a4aaac6f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "19ed2365-67d4-4212-a334-e6ebd5bcbde9",
+      "duration": 707,
+      "estimatedDuration": 398,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "172",
+      "keepLog": true,
+      "number": 90,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556389800000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "d37e8e21-9957-4692-a974-396268fcc18f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "62724eb2-13d1-4e48-a056-0784bd558959",
+      "duration": 556,
+      "estimatedDuration": 356,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "173",
+      "keepLog": true,
+      "number": 54,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556303400000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "be5e48cb-3586-4677-adbe-4b993666f205"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "fef1f45b-3de1-4682-a915-4af9bb739b15",
+      "duration": 565,
+      "estimatedDuration": 369,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "174",
+      "keepLog": true,
+      "number": 30,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "b2f9ae39-0c65-4589-98e0-9a1f16f27c92"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c645028e-a652-4490-9a9f-f5922c30869a",
+      "duration": 662,
+      "estimatedDuration": 371,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "175",
+      "keepLog": true,
+      "number": 25,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555957800000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "eef7836b-6011-434f-b751-1d7ebbd4dbf1"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "e67723a3-11b9-4087-a947-271a935510f2",
+      "duration": 643,
+      "estimatedDuration": 375,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "176",
+      "keepLog": true,
+      "number": 8,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556303400000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "7e634690-1e89-499c-a795-5a92017a229e"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "a36ac605-cf7b-447d-9a37-9688b4ac02d4",
+      "duration": 782,
+      "estimatedDuration": 372,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "177",
+      "keepLog": true,
+      "number": 41,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555698600000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "c9713cc3-986a-4d2f-957f-13467ce68e96"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "3bc970b6-0263-4a45-b0a7-801a51d84779",
+      "duration": 571,
+      "estimatedDuration": 393,
+      "executor": "executor",
+      "fullDisplayName": "some-Germany-build-job-1",
+      "id": "178",
+      "keepLog": true,
+      "number": 42,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "some-Germany-repo-url-1",
+      "gitDetails": {
+        "repo": "some-Germany-repo-url-1",
+        "branch": "master",
+        "commit": "8301e205-e761-4635-9206-0d0f9abe365a"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "e412ccda-06dd-422b-83d7-0e2df9c70007",
+      "duration": 798,
+      "estimatedDuration": 385,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "179",
+      "keepLog": true,
+      "number": 33,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555180200000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "662c7021-ae40-4ef8-95b6-e9e9176720f8"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "f8c62b3e-f905-41b7-be90-ec297a0d810b",
+      "duration": 752,
+      "estimatedDuration": 387,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "180",
+      "keepLog": true,
+      "number": 25,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555785000000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "66597e4b-2757-4e6e-a3b9-5fbacd1a6037"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "f57c6dab-c6d6-49e6-b7e9-f48f88ab0497",
+      "duration": 738,
+      "estimatedDuration": 385,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "181",
+      "keepLog": true,
+      "number": 39,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555612200000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "f78bc0d1-f80a-40f4-9f88-42ec97a03298"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "d2957227-5e39-4297-b3cf-0b8a952a3db5",
+      "duration": 793,
+      "estimatedDuration": 372,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "182",
+      "keepLog": true,
+      "number": 95,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "991ae156-671c-43a5-836e-4815def4d643"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "02c1268d-a8c9-4ae8-94fb-e1f70d0448d5",
+      "duration": 521,
+      "estimatedDuration": 383,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "183",
+      "keepLog": true,
+      "number": 58,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556217000000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "fd4dce53-3a5a-4afc-8bba-2904e55b60cb"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "b8edd4b9-b38c-4a37-9b21-a709a24de806",
+      "duration": 731,
+      "estimatedDuration": 371,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "184",
+      "keepLog": true,
+      "number": 74,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "5c7a6f6f-5c32-4029-a1f9-fba06fb0d3b5"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "9ece9da1-18cb-464d-996b-09a215ccb270",
+      "duration": 709,
+      "estimatedDuration": 356,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "185",
+      "keepLog": true,
+      "number": 61,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555266600000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "53263f42-c182-4c68-924a-96f2bf28fc77"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "f4fad406-98a0-46ec-b5f8-963f264b29bb",
+      "duration": 764,
+      "estimatedDuration": 373,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "186",
+      "keepLog": true,
+      "number": 85,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555266600000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "f5f7f2e2-5793-4dc2-bd5a-782e5ce3c293"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "c267df64-4fa4-46c7-a784-a52e8c10b597",
+      "duration": 506,
+      "estimatedDuration": 387,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "187",
+      "keepLog": true,
+      "number": 92,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556303400000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "33eed665-904d-40d8-ac4b-1c950273a8c8"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "0f2db66d-9c62-4a45-a904-ab7c454361f5",
+      "duration": 727,
+      "estimatedDuration": 382,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "188",
+      "keepLog": true,
+      "number": 77,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555353000000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "769408ba-ec40-4285-b003-99641773e43c"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "f19ed447-4a37-4e55-8ed0-2b00db6acee8",
+      "duration": 630,
+      "estimatedDuration": 400,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "189",
+      "keepLog": true,
+      "number": 50,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1555439400000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "e19d0974-3450-465a-b0d9-f67f6f2bc9bf"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "eeb1a810-0350-43c6-bcf4-c75066d504e9",
+      "duration": 704,
+      "estimatedDuration": 381,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "190",
+      "keepLog": true,
+      "number": 66,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556130600000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "b4262f86-f2dd-4b34-96de-e748c1c0af95"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    },
+    {
+      "building": false,
+      "description": "job",
+      "displayName": "8cd98621-003b-48a6-b388-60bb29a75bfc",
+      "duration": 575,
+      "estimatedDuration": 390,
+      "executor": "executor",
+      "fullDisplayName": "some-refereence-build-job",
+      "id": "191",
+      "keepLog": true,
+      "number": 38,
+      "queueId": "queue",
+      "result": "SUCCESS",
+      "timestamp": 1556044200000,
+      "url": "some-reference-repo-url",
+      "gitDetails": {
+        "repo": "some-reference-repo-url",
+        "branch": "master",
+        "commit": "9ea70824-807a-46b5-86ed-a51c003b816f"
+      },
+      "causeDetails": {
+        "causeName": "some-cause",
+        "userName": "some-user",
+        "userId": "some-user-id",
+        "upstream": "some-upstream"
+      }
+    }
+  ],
+  "bitbucketRepoInfo": null,
+  "sonarProjectInfo": null
+}

@@ -1,7 +1,7 @@
 package app.listener;
 
 import app.config.Channels;
-import app.converter.JsonToObjectConvertor;
+import app.collector.JsonToObjectConvertor;
 import app.model.BuildDetailsModel;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;

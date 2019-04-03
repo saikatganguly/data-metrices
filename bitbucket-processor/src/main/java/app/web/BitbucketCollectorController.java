@@ -1,6 +1,6 @@
 package app.web;
 
-import app.converter.BitbucketCollector;
+import app.collector.BitbucketCollector;
 import app.model.CommitInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

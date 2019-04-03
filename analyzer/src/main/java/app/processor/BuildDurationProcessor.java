@@ -23,10 +23,10 @@ public class BuildDurationProcessor implements BuildProcessors {
 
     @Override
     public void process(BuildDetailsModel details) {
-        Date todayDate = new Date(details.getTimestamp());
-        /*BuildDurationView durationView = repository.findByRepoAndDate(details.getGitDetails().getRepo(), todayDate);
+        Date date = new Date(details.getTimestamp());
+        /*BuildDurationView durationView = repository.findByRepoAndDate(details.getGitDetails().getRepo(), date);
         if (isNull(durationView)) {*/
-            BuildDurationView view = new BuildDurationView(randomUUID().toString(), details.getGitDetails().getRepo(), details.getGitDetails().getBranch(), details.getDuration(), todayDate);
+            BuildDurationView view = new BuildDurationView(randomUUID().toString(), details.getGitDetails().getRepo(), details.getGitDetails().getBranch(), details.getDuration(), date);
             repository.save(view);
         /*}*/
     }

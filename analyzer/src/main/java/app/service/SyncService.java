@@ -45,7 +45,7 @@ public class SyncService {
     private Long processBuildsFrom(Long timeStamp) {
         List<BuildDetailsModel> buildDetailsModels = buildDetailsModelRepository.findByTimestampGreaterThanEqual(timeStamp);
         for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
-            buildDetailsService.updateGitDetails(buildDetailsModel);
+            buildDetailsService.updateBuildDetails(buildDetailsModel);
             if (buildDetailsModel.getTimestamp() > timeStamp) {
                 timeStamp = buildDetailsModel.getTimestamp();
             }

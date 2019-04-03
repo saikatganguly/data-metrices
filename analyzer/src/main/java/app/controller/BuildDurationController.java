@@ -51,6 +51,17 @@ public class BuildDurationController {
         return response;
     }
 
+    @RequestMapping("/org/{transactionCycle}/{geography}/{project}/{repo}/all")
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public List<Long> buildDurationsForRepo(@PathVariable String transactionCycle,
+                                            @PathVariable String geography,
+                                            @PathVariable String project,
+                                            @PathVariable String repo,
+                                            @RequestBody DateRange range) {
+        return repository.getDurationByRepoAndDateBetween(repo, range.getFrom(), range.getTo());
+    }
+
     @RequestMapping("/org/{transactionCycle}/{geography}/{project}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody

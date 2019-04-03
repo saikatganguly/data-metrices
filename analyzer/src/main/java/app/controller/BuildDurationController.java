@@ -37,7 +37,7 @@ public class BuildDurationController {
     public List<String> referenceData(@PathVariable(name = "projectName") String projectName) {
         return referenceDataService.getReposByProject(projectName)
                 .stream()
-                .map(Repo::getUrl)
+                .map(Repo::getName)
                 .collect(Collectors.toList());
     }
 
@@ -54,8 +54,10 @@ public class BuildDurationController {
 
         //repo = "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git";
 
+        Repo repo1 = referenceDataService.getRepo(repo);
+
         double average = repository
-                .findByRepoAndDateBetween(repo, fromDate, toDate)
+                .findByRepoAndDateBetween(repo1.getUrl(), fromDate, toDate)
                 .stream()
                 .map(view -> view.getDuration())
                 .mapToDouble(i -> i)
@@ -93,7 +95,7 @@ public class BuildDurationController {
                                                        @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         List<String> repos = referenceDataService.getReposByProject(project)
                 .stream()
-                .map(Repo::getUrl)
+                .map(Repo::getName)
                 .collect(Collectors.toList());
 
         Map<String, Double> response = new HashMap<>();

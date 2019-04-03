@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
+import static org.springframework.util.CollectionUtils.isEmpty;
+
 @Component
 public class SonarDataReceiver {
     @Autowired
@@ -18,6 +20,10 @@ public class SonarDataReceiver {
     @StreamListener(Channels.SONAR_PROCESSED_DATA)
     public void handleMessages(@Payload List<Map<String, String>> sonarProjectInfo) {
         System.out.println("sonarProjectInfo = " + sonarProjectInfo);
+
+        if (isEmpty(sonarProjectInfo)) {
+            return;
+        }
 
         mongoTemplate.insert(sonarProjectInfo, "sonar-processed-data");
     }

@@ -62,7 +62,7 @@ public class SyncService {
     private Long getStartTimestamp(String syncJobKey) {
         Optional<SyncJob> syncJob = syncJobRepository.findById(syncJobKey);
         if (!syncJob.isPresent()) {
-            SyncJob job = new SyncJob(syncJobKey, new Date(1999, 01, 01, 00, 00, 00).getTime());
+            SyncJob job = new SyncJob(syncJobKey, new Date(99, 00, 01, 00, 00, 00).getTime());
             syncJobRepository.save(job);
             return job.getTimestamp();
         }

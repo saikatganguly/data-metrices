@@ -76,8 +76,6 @@ public class BitbucketCollector {
 
     public Map<String, CommitInfo> repoInformation(BitbucketRepo bitbucketRepo, String since, String until) throws MalformedURLException {
 
-//        Map<BitbucketRepo, Map<String, CommitInfo>> map = new HashMap<>();
-
         String partialRepoUrl = bitbucketRepo.getRepoUrl();
 
         //Fetching commits
@@ -104,9 +102,6 @@ public class BitbucketCollector {
                 .forEach(entry -> System.out.println(entry.getValue()));
 
         return repoInformation;
-//        map.put(bitbucketRepo, repoInformation);
-
-//        return map;
     }
 
     public Map<String, CommitInfo> tags(String tagUrl) {

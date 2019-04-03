@@ -2,17 +2,19 @@ package app.listener;
 
 import app.collector.BitbucketCollector;
 import app.config.Channels;
-import app.model.BitbucketRepo;
-import app.model.BuildDetailsModel;
-import app.model.CommitInfo;
+import app.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -47,13 +49,14 @@ public class JenkinsMessageListener {
                 //TODO : Need to fix this model
                 //Currently it is getting all builds information for
                 //Need to revisit
-                String repoUrl = buildDetailsModel.getGitDetails().getRepo();
+                GitDetails gitDetails = buildDetailsModel.getGitDetails();
+                String repoUrl = gitDetails.getRepo();
 
                 String since = getLastSyncedCommit(repoUrl);
 
                 String until = getBuildCommit(buildDetailsModel);
 
-                updateLastSyncedCommit(repoUrl);
+                updateLastSyncedCommit(gitDetails);
 
                 Map<String, Map<String, CommitInfo>> repoInformation = new HashMap<>();
                 Map<String, CommitInfo> commitInfoMap = getRepoInformation(repoUrl, since, until);
@@ -87,13 +90,21 @@ public class JenkinsMessageListener {
     }
 
     private String getLastSyncedCommit(String repoUrl) {
-        //TODO:: Use mongo to fetch last synced commit for given repo
-        return "";
+        Query query = new Query(Criteria.where("repoUrl").is(repoUrl));
+        LastCommitTracker tracker = mongoTemplate.findOne(query, LastCommitTracker.class, "bitbucket-commit-tracker-collection");
+
+        if (StringUtils.isEmpty(tracker.getCommitId())) {
+            return "";
+        }
+        return tracker.getCommitId();
     }
 
-    private void updateLastSyncedCommit(String repoUrl) {
-        //TODO:: Use mongo to update last synced commit for given repo
-        //mongoTemplate.
+    private void updateLastSyncedCommit(GitDetails gitDetails) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("repoUrl").is(gitDetails.getRepo()));
+        Update update = new Update();
+        update.set("commitId", gitDetails.getCommit());
+        mongoTemplate.upsert(query, update, LastCommitTracker.class, "bitbucket-commit-tracker-collection");
     }
 
     public Map<String, CommitInfo> getRepoInformation(String repoUrl, String since, String until) throws MalformedURLException {

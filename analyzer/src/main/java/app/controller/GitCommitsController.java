@@ -55,7 +55,7 @@ public class GitCommitsController {
                                                          @PathVariable String project,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> repos = referenceDataService.getReposByProject(project)
+        List<String> repos = referenceDataService.getReposByProject(transactionCycle, geography, project)
                 .stream()
                 .map(Repo::getUrl)
                 .collect(Collectors.toList());
@@ -75,7 +75,7 @@ public class GitCommitsController {
                                                            @PathVariable String geography,
                                                            @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                            @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> projects = referenceDataService.getProjectsByGeography(geography)
+        List<String> projects = referenceDataService.getProjectsByGeography(transactionCycle, geography)
                 .stream()
                 .map(Project::getProjectName)
                 .collect(Collectors.toList());

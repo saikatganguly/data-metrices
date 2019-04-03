@@ -1,5 +1,5 @@
 {
-  "organizationName": "Barclays",
+  "organizationName": "Org",
   "transactionCycles": [
     {
       "transactionCycleName": "Cards",
@@ -113,7 +113,7 @@
             }
           ]
         }
-      ]
+    ]
     }
   ]
 }

@@ -78,3 +78,9 @@ node {
 //      archive 'target/*.jar'
 //   }
 //}
+
+
+/**Exporter job**/
+curl https://raw.githubusercontent.com/saikatganguly/jenkins-matrix-exporter/master/jenkins-matrix-exporter-1.0-SNAPSHOT-jar-with-dependencies.jar --output jenkins-matrix-exporter-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+java -jar jenkins-matrix-exporter-1.0-SNAPSHOT-jar-with-dependencies.jar

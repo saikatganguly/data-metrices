@@ -3,20 +3,20 @@ package app.controller.request;
 import java.util.Date;
 
 public class MetricesTriggerSyncRequest {
-    public Date startDate;
+    public String buildId;
 
     public MetricesTriggerSyncRequest() {
     }
 
-    public MetricesTriggerSyncRequest(Date startDate) {
-        this.startDate = startDate;
+    public MetricesTriggerSyncRequest(String buildId) {
+        this.buildId = buildId;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public String getBuildId() {
+        return buildId;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setBuildId(String buildId) {
+        this.buildId = buildId;
     }
 }

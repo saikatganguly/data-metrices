@@ -2,13 +2,13 @@ package app.collector;
 
 import app.model.BitbucketRepo;
 import app.model.CommitInfo;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpEntity;
@@ -31,7 +31,7 @@ import static org.springframework.util.StringUtils.isEmpty;
 @Component
 public class BitbucketCollector {
 
-    private static final Log LOG = LogFactory.getLog(BitbucketCollector.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BitbucketCollector.class);
 
     private static final String USERID = "asanodia";
     private static final String PASSWORD = "asanodia";
@@ -103,9 +103,15 @@ public class BitbucketCollector {
     }
 
     public Map<String, CommitInfo> tags(String tagUrl) {
-        ResponseEntity<String> tags = bitbucketRestTemplate.exchange(tagUrl, HttpMethod.GET,
-                new HttpEntity<>(createHeaders(USERID, PASSWORD)),
-                String.class);
+        ResponseEntity<String> tags = null;
+        try {
+            tags = bitbucketRestTemplate.exchange(tagUrl, HttpMethod.GET,
+                    new HttpEntity<>(createHeaders(USERID, PASSWORD)),
+                    String.class);
+        } catch (Exception exception) {
+            LOG.error("Unable to fetch tags for repo {}, exception {}", tagUrl, exception.getMessage());
+            return new HashMap<>();
+        }
 
         JSONObject tagsParentObject = paresAsObject(tags);
         JSONArray tagsArray = (JSONArray) tagsParentObject.get("values");
@@ -127,9 +133,16 @@ public class BitbucketCollector {
     }
 
     public Map<String, CommitInfo> commits(String commitsUrl) {
-        ResponseEntity<String> commits = bitbucketRestTemplate.exchange(commitsUrl, HttpMethod.GET,
-                new HttpEntity<>(createHeaders(USERID, PASSWORD)),
-                String.class);
+        ResponseEntity<String> commits = null;
+        try {
+            commits = bitbucketRestTemplate.exchange(commitsUrl, HttpMethod.GET,
+                    new HttpEntity<>(createHeaders(USERID, PASSWORD)),
+                    String.class);
+        } catch (Exception exception) {
+            LOG.error("Unable to fetch commits for repo {}, exception {}", commitsUrl, exception.getMessage());
+            return new HashMap<>();
+        }
+
         JSONObject commitsParentObject = paresAsObject(commits);
         JSONArray commitsArray = (JSONArray) commitsParentObject.get("values");
 

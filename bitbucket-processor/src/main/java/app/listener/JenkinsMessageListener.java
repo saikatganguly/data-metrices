@@ -1,10 +1,12 @@
 package app.listener;
 
-import app.config.Channels;
 import app.collector.BitbucketCollector;
+import app.config.Channels;
 import app.model.BitbucketRepo;
 import app.model.BuildDetailsModel;
 import app.model.CommitInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -19,8 +21,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static org.springframework.util.CollectionUtils.isEmpty;
+
 @Component
 public class JenkinsMessageListener {
+    private static final Logger LOG = LoggerFactory.getLogger(JenkinsMessageListener.class);
 
     private BitbucketCollector collector;
     private MongoTemplate mongoTemplate;
@@ -51,20 +56,26 @@ public class JenkinsMessageListener {
                 updateLastSyncedCommit(repoUrl);
 
                 Map<String, Map<String, CommitInfo>> repoInformation = new HashMap<>();
-                repoInformation.put(repoUrl, getRepoInformation(repoUrl, since, until));
+                Map<String, CommitInfo> commitInfoMap = getRepoInformation(repoUrl, since, until);
 
-                repoInformation
-                        .entrySet()
-                        .stream()
-                        .forEach(
-                                entry -> {
-                                    entry.getValue()
-                                            .entrySet()
-                                            .stream()
-                                            .forEach(entryConsumer -> System.out.println(entryConsumer.getValue()));
-                                }
-                        );
-                buildsRepoInformationList.add(repoInformation);
+                if (isEmpty(commitInfoMap)) {
+                    LOG.warn("No commit information available for repo {}", repoUrl);
+                } else {
+                    repoInformation.put(repoUrl, commitInfoMap);
+
+                    repoInformation
+                            .entrySet()
+                            .stream()
+                            .forEach(
+                                    entry -> {
+                                        entry.getValue()
+                                                .entrySet()
+                                                .stream()
+                                                .forEach(entryConsumer -> System.out.println(entryConsumer.getValue()));
+                                    }
+                            );
+                    buildsRepoInformationList.add(repoInformation);
+                }
             }
         }
 

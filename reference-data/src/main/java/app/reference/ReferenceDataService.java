@@ -52,6 +52,26 @@ public class ReferenceDataService {
         return repos;
     }
 
+    public Repo getRepo(String repoName) {
+        if (isNull(repoName) || repoName.isEmpty()) {
+            return null;
+        }
+
+        for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
+            for (Geography geography : transactionCycle.getGeographies()) {
+                for (Project proj : geography.getProjects()) {
+                    for (Repo repo : proj.getRepos()) {
+                        if (repo.getName().equalsIgnoreCase(repoName)) {
+                            return repo;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
     public List<Project> getProjectsByGeography(String geography) {
         if (isNull(geography) || geography.isEmpty()) {
             return emptyList();

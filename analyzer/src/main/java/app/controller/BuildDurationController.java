@@ -51,7 +51,18 @@ public class BuildDurationController {
                                                     @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                     @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         Map<String, Double> response = new HashMap<>();
-        response.put(repo, repository.getAverageOfDurationByRepoAndDateBetween(repo, fromDate, toDate));
+
+        //repo = "http://192.168.99.100:7990/scm/test-project-key-1/test-repository-1.git";
+
+        double average = repository
+                .findByRepoAndDateBetween(repo, fromDate, toDate)
+                .stream()
+                .map(view -> view.getDuration())
+                .mapToDouble(i -> i)
+                .average()
+                .getAsDouble();
+
+        response.put(repo, average);
         return response;
     }
 
@@ -64,7 +75,12 @@ public class BuildDurationController {
                                             @PathVariable String repo,
                                             @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                             @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        return repository.getDurationByRepoAndDateBetween(repo, fromDate, toDate);
+
+        return repository
+                .findByRepoAndDateBetween(repo, fromDate, toDate)
+                .stream()
+                .map(view -> view.getDuration())
+                .collect(Collectors.toList());
     }
 
     @RequestMapping("/org/{transactionCycle}/{geography}/{project}")
@@ -82,7 +98,8 @@ public class BuildDurationController {
 
         Map<String, Double> response = new HashMap<>();
         for (String repo : repos) {
-            response.put(repo, buildDurationForRepo(transactionCycle, geography, project, repo, fromDate, toDate).get(repo));
+            Double average = buildDurationForRepo(transactionCycle, geography, project, repo, fromDate, toDate).get(repo);
+            response.put(repo, average);
         }
 
         return response;

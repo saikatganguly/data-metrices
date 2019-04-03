@@ -1,19 +1,17 @@
 package app.entity;
 
-import java.util.Date;
-
 //@Entity
 public class SyncJob {
   //  @Id
     private String id;
-    private Long timestamp;
+    private String jobId;
 
     public SyncJob() {
     }
 
-    public SyncJob(String id, Long timestamp) {
+    public SyncJob(String id, String jobId) {
         this.id = id;
-        this.timestamp = timestamp;
+        this.jobId = jobId;
     }
 
     public String getId() {
@@ -24,11 +22,11 @@ public class SyncJob {
         this.id = id;
     }
 
-    public Long getTimestamp() {
-        return timestamp;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setTimestamp(Long timestamp) {
-        this.timestamp = timestamp;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
 }

@@ -1,4 +1,4 @@
-package app.converter;
+package app.collector;
 
 import app.model.BuildDetailsModel;
 import app.model.CauseDetails;

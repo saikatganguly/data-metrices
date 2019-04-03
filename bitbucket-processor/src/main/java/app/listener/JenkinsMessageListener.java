@@ -1,7 +1,7 @@
 package app.listener;
 
 import app.config.Channels;
-import app.converter.BitbucketCollector;
+import app.collector.BitbucketCollector;
 import app.model.BitbucketRepo;
 import app.model.BuildDetailsModel;
 import app.model.CommitInfo;

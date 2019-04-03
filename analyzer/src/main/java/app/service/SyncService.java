@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -37,35 +36,33 @@ public class SyncService {
     }
 
     private void processBuildDetails(MetricesTriggerSyncRequest request) {
-        Long timeStamp = nonNull(request) && nonNull(request.getStartDate()) ? request.getStartDate().getTime() : getStartTimestamp("BuildDetailsModel");
-        timeStamp = processBuildsFrom(timeStamp);
-        updateNextStartDate(timeStamp, "BuildDetailsModel");
+        String jobId = nonNull(request) && nonNull(request.getBuildId()) ? request.getBuildId() : getStartTimestamp("BuildDetailsModel");
+        jobId = processBuildsFrom(jobId);
+        updateNextStartDate(jobId, "BuildDetailsModel");
     }
 
-    private Long processBuildsFrom(Long timeStamp) {
-        List<BuildDetailsModel> buildDetailsModels = buildDetailsModelRepository.findByTimestampGreaterThanEqual(timeStamp);
+    private String processBuildsFrom(String jobId) {
+        List<BuildDetailsModel> buildDetailsModels = buildDetailsModelRepository.findByIdGreaterThan(jobId);
         for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
-            buildDetailsService.updateGitDetails(buildDetailsModel);
-            if (buildDetailsModel.getTimestamp() > timeStamp) {
-                timeStamp = buildDetailsModel.getTimestamp();
-            }
+            buildDetailsService.updateBuildDetails(buildDetailsModel);
+            jobId = buildDetailsModel.getId();
         }
-        return timeStamp;
+        return jobId;
     }
 
-    private void updateNextStartDate(Long timestamp, String syncJobKey) {
+    private void updateNextStartDate(String jobId, String syncJobKey) {
         SyncJob syncJob = syncJobRepository.findById(syncJobKey).get();
-        syncJob.setTimestamp(timestamp);
+        syncJob.setJobId(jobId);
         syncJobRepository.save(syncJob);
     }
 
-    private Long getStartTimestamp(String syncJobKey) {
+    private String getStartTimestamp(String syncJobKey) {
         Optional<SyncJob> syncJob = syncJobRepository.findById(syncJobKey);
         if (!syncJob.isPresent()) {
-            SyncJob job = new SyncJob(syncJobKey, new Date(1999, 01, 01, 00, 00, 00).getTime());
+            SyncJob job = new SyncJob(syncJobKey, "0");
             syncJobRepository.save(job);
-            return job.getTimestamp();
+            return job.getJobId();
         }
-        return syncJob.get().getTimestamp();
+        return syncJob.get().getJobId();
     }
 }

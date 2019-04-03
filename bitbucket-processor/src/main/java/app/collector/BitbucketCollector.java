@@ -1,4 +1,4 @@
-package app.converter;
+package app.collector;
 
 import app.model.BitbucketRepo;
 import app.model.CommitInfo;
@@ -76,12 +76,8 @@ public class BitbucketCollector {
 
     public Map<String, CommitInfo> repoInformation(BitbucketRepo bitbucketRepo, String since, String until) throws MalformedURLException {
 
-//        Map<BitbucketRepo, Map<String, CommitInfo>> map = new HashMap<>();
-
-        String partialRepoUrl = bitbucketRepo.getRepoUrl();
-
         //Fetching commits
-        String commitsUrl = partialRepoUrl + "/commits?";
+        String commitsUrl = bitbucketRepo.getRepoUrl() + "/commits?";
 
         if (!isEmpty(since)) {
             commitsUrl = commitsUrl + "since=" + since;
@@ -93,7 +89,7 @@ public class BitbucketCollector {
         Map<String, CommitInfo> commitInformation = commits(commitsUrl);
 
         //Fetching tags
-        String tagUrl = partialRepoUrl + "/tags";
+        String tagUrl = bitbucketRepo.getRepoUrl() + "/tags";
         Map<String, CommitInfo> tagsInformation = tags(tagUrl);
 
         Map<String, CommitInfo> repoInformation = merge(commitInformation, tagsInformation);
@@ -104,15 +100,13 @@ public class BitbucketCollector {
                 .forEach(entry -> System.out.println(entry.getValue()));
 
         return repoInformation;
-//        map.put(bitbucketRepo, repoInformation);
-
-//        return map;
     }
 
     public Map<String, CommitInfo> tags(String tagUrl) {
         ResponseEntity<String> tags = bitbucketRestTemplate.exchange(tagUrl, HttpMethod.GET,
                 new HttpEntity<>(createHeaders(USERID, PASSWORD)),
                 String.class);
+
         JSONObject tagsParentObject = paresAsObject(tags);
         JSONArray tagsArray = (JSONArray) tagsParentObject.get("values");
         Map<String, CommitInfo> tagsInformation = new HashMap<>();
@@ -164,7 +158,6 @@ public class BitbucketCollector {
 
         return commitInformation;
     }
-
 
     private Map<String, CommitInfo> merge(Map<String, CommitInfo> commitInformation, Map<String, CommitInfo> tagsInformation) {
         Map<String, CommitInfo> repoInformation = new HashMap<>();

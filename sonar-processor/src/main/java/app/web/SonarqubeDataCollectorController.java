@@ -1,6 +1,6 @@
 package app.web;
 
-import app.converter.SonarqubeDataCollector;
+import app.collector.SonarqubeDataCollector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

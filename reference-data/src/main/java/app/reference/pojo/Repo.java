@@ -1,12 +1,14 @@
 package app.reference.pojo;
 
 public class Repo {
+    private String name;
     public String url;
     public String buildJob;
     public String deployJob;
     private String sonarProjectKey;
 
-    public Repo(String url, String buildJob, String deployJob, String sonarProjectKey) {
+    public Repo(String name, String url, String buildJob, String deployJob, String sonarProjectKey) {
+        this.name = name;
         this.url = url;
         this.buildJob = buildJob;
         this.deployJob = deployJob;
@@ -46,6 +48,14 @@ public class Repo {
 
     public void setSonarProjectKey(String sonarProjectKey) {
         this.sonarProjectKey = sonarProjectKey;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

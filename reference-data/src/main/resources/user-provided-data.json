@@ -2,16 +2,107 @@
   "organizationName": "Barclays",
   "transactionCycles": [
     {
-      "transactionCycleName": "some-reference-tc",
+      "transactionCycleName": "Cards",
       "geographies": [
         {
-          "geographyName": "some-reference-geography",
+          "geographyName": "US",
+          "projects": [
+            {
+              "projectName": "CardNG",
+              "repos": [
+                {
+                  "name": "cardNG-repo-1",
+                  "url": "cardNG-repo-url-1",
+                  "buildJob": "cardNG-build-job-1",
+                  "deployJob": "cardNG-deploy-job-1",
+                  "sonarProjectKey": "cardNG-sonar-key-1"
+                },
+                {
+                  "name": "cardNG-repo-2",
+                  "url": "cardNG-repo-url-2",
+                  "buildJob": "cardNG-build-job-2",
+                  "deployJob": "cardNG-deploy-job-2",
+                  "sonarProjectKey": "cardNG-sonar-key-2"
+                },
+                {
+                  "name": "cardNG-repo-3",
+                  "url": "cardNG-repo-url-3",
+                  "buildJob": "cardNG-build-job-3",
+                  "deployJob": "cardNG-deploy-job-3",
+                  "sonarProjectKey": "cardNG-sonar-key-3"
+                }
+              ],
+              "jenkinsServer": "cardNG-jenkins-server",
+              "sonarServer": "cardNG-sonar-server"
+            },
+            {
+              "projectName": "Collections",
+              "repos": [
+                {
+                  "name": "Collections-repo-1",
+                  "url": "Collections-repo-url-1",
+                  "buildJob": "collections-build-job",
+                  "deployJob": "collections-deploy-job",
+                  "sonarProjectKey": "collections-sonar-key"
+                }
+              ],
+              "jenkinsServer": "collections-jenkins-server",
+              "sonarServer": "collections-sonar-server"
+            }
+          ]
+        },
+        {
+          "geographyName": "UK",
+          "projects": [
+            {
+              "projectName": "some-UK-project",
+              "repos": [
+                {
+                  "name": "some-UK-repo-1",
+                  "url": "some-UK-repo-url-1",
+                  "buildJob": "some-UK-build-job-1",
+                  "deployJob": "some-UK-deploy-job-1",
+                  "sonarProjectKey": "some-UK-sonar-key-1"
+                }
+              ],
+              "jenkinsServer": "some-UK-jenkins-server",
+              "sonarServer": "some-UK-sonar-server"
+            }
+          ]
+        },
+        {
+          "geographyName": "Germany",
+          "projects": [
+            {
+              "projectName": "some-Germany-project",
+              "repos": [
+                {
+                  "name": "some-Germany-repo-1",
+                  "url": "some-Germany-repo-url-1",
+                  "buildJob": "some-Germany-build-job-1",
+                  "deployJob": "some-Germany-deploy-job-1",
+                  "sonarProjectKey": "some-Germany-sonar-key-1"
+                }
+              ],
+              "jenkinsServer": "some-Germany-jenkins-server",
+              "sonarServer": "some-Germany-sonar-server"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "transactionCycleName": "DCB",
+      "geographies": [
+        {
+          "geographyName": "US",
           "projects": [
             {
               "projectName": "some-reference-project",
               "repos": [
                 {
-                  "url": "some-reference-repo",
+                  "name": "some-reference-repo",
+                  "url": "some-reference-repo-url",
                   "buildJob": "some-refereence-build-job",
                   "deployJob": "some-reference-deploy-job",
                   "sonarProjectKey": "some-reference-sonar-key"

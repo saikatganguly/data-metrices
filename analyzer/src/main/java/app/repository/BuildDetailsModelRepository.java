@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface BuildDetailsModelRepository extends MongoRepository<BuildDetailsModel, String> {
-    List<BuildDetailsModel> findByTimestampGreaterThanEqual(Long timestamp);
+    List<BuildDetailsModel> findByIdGreaterThan(String id);
 }

@@ -22,7 +22,7 @@ public class BuildDetailsService {
         this.processors = processors;
     }
 
-    public void updateGitDetails(BuildDetailsModel model) {
+    public void updateBuildDetails(BuildDetailsModel model) {
         try {
             process(model);
         } catch (Exception ex) {

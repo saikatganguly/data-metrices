@@ -1,6 +1,6 @@
 package app.listener;
 
-import app.converter.BitbucketCollector;
+import app.collector.BitbucketCollector;
 import app.listener.JenkinsMessageListner;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;

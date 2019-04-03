@@ -1,6 +1,5 @@
 package app.controller;
 
-import app.controller.request.DateRange;
 import app.reference.ReferenceDataService;
 import app.reference.pojo.Geography;
 import app.reference.pojo.Project;
@@ -8,13 +7,17 @@ import app.reference.pojo.Repo;
 import app.reference.pojo.TransactionCycle;
 import app.repository.BuildDurationViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
 
 @RestController
@@ -45,9 +48,10 @@ public class BuildDurationController {
                                                     @PathVariable String geography,
                                                     @PathVariable String project,
                                                     @PathVariable String repo,
-                                                    @RequestBody DateRange range) {
+                                                    @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                    @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         Map<String, Double> response = new HashMap<>();
-        response.put(repo, repository.getAverageOfDurationByRepoAndDateBetween(repo, range.getFrom(), range.getTo()));
+        response.put(repo, repository.getAverageOfDurationByRepoAndDateBetween(repo, fromDate, toDate));
         return response;
     }
 
@@ -58,8 +62,9 @@ public class BuildDurationController {
                                             @PathVariable String geography,
                                             @PathVariable String project,
                                             @PathVariable String repo,
-                                            @RequestBody DateRange range) {
-        return repository.getDurationByRepoAndDateBetween(repo, range.getFrom(), range.getTo());
+                                            @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                            @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
+        return repository.getDurationByRepoAndDateBetween(repo, fromDate, toDate);
     }
 
     @RequestMapping("/org/{transactionCycle}/{geography}/{project}")
@@ -68,7 +73,8 @@ public class BuildDurationController {
     public Map<String, Double> buildDurationForProject(@PathVariable String transactionCycle,
                                                        @PathVariable String geography,
                                                        @PathVariable String project,
-                                                       @RequestBody DateRange range) {
+                                                       @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                       @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         List<String> repos = referenceDataService.getReposByProject(project)
                 .stream()
                 .map(Repo::getUrl)
@@ -76,7 +82,7 @@ public class BuildDurationController {
 
         Map<String, Double> response = new HashMap<>();
         for (String repo : repos) {
-            response.put(repo, buildDurationForRepo(transactionCycle, geography, project, repo, range).get(repo));
+            response.put(repo, buildDurationForRepo(transactionCycle, geography, project, repo, fromDate, toDate).get(repo));
         }
 
         return response;
@@ -87,7 +93,8 @@ public class BuildDurationController {
     @ResponseBody
     public Map<String, Double> buildDurationForGeography(@PathVariable String transactionCycle,
                                                          @PathVariable String geography,
-                                                         @RequestBody DateRange range) {
+                                                         @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                         @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         List<String> projects = referenceDataService.getProjectsByGeography(geography)
                 .stream()
                 .map(Project::getProjectName)
@@ -96,7 +103,7 @@ public class BuildDurationController {
         Map<String, Double> response = new HashMap<>();
 
         for (String project : projects) {
-            Map<String, Double> reposAverage = buildDurationForProject(transactionCycle, geography, project, range);
+            Map<String, Double> reposAverage = buildDurationForProject(transactionCycle, geography, project, fromDate, toDate);
             double average = reposAverage
                     .values()
                     .stream()
@@ -113,7 +120,8 @@ public class BuildDurationController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Map<String, Double> buildDurationForTransactionCycle(@PathVariable String transactionCycle,
-                                                                @RequestBody DateRange range) {
+                                                                @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                                @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         List<String> geographys = referenceDataService.getGeographyByTransactionCycle(transactionCycle)
                 .stream()
                 .map(Geography::getGeographyName)
@@ -122,7 +130,7 @@ public class BuildDurationController {
         Map<String, Double> response = new HashMap<>();
 
         for (String geography : geographys) {
-            Map<String, Double> reposAverage = buildDurationForGeography(transactionCycle, geography, range);
+            Map<String, Double> reposAverage = buildDurationForGeography(transactionCycle, geography, fromDate, toDate);
             double average = reposAverage
                     .values()
                     .stream()
@@ -138,7 +146,8 @@ public class BuildDurationController {
     @RequestMapping("/org")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> buildDurationForOrganization(@RequestBody DateRange range) {
+    public Map<String, Double> buildDurationForOrganization(@RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                            @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         List<String> transactionCycles = referenceDataService.getTransactionCyclesByOrganization("org")
                 .stream()
                 .map(TransactionCycle::getTransactionCycleName)
@@ -147,7 +156,7 @@ public class BuildDurationController {
         Map<String, Double> response = new HashMap<>();
 
         for (String transactionCycle : transactionCycles) {
-            Map<String, Double> reposAverage = buildDurationForTransactionCycle(transactionCycle, range);
+            Map<String, Double> reposAverage = buildDurationForTransactionCycle(transactionCycle, fromDate, toDate);
             double average = reposAverage
                     .values()
                     .stream()

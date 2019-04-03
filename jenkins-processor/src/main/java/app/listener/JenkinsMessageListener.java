@@ -1,7 +1,7 @@
 package app.listener;
 
 import app.config.Channels;
-import app.collector.JsonToObjectConvertor;
+import app.collector.XMLToObjectConvertor;
 import app.model.BuildDetailsModel;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -16,9 +16,9 @@ public class JenkinsMessageListener {
 
     @StreamListener(Channels.JENKINS_RAW_DATA)
     @SendTo(Channels.JENKINS_PROCESSED_DATA)
-    public Map<String, List<BuildDetailsModel>> handleMessages(@Payload String buildInfo) {
+    public BuildDetailsModel handleMessages(@Payload String buildInfo) {
         try {
-            return JsonToObjectConvertor.buildJenkinsDetails(buildInfo);
+            return XMLToObjectConvertor.buildJenkinsDetails(buildInfo);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

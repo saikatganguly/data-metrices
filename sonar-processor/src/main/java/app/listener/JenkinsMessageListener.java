@@ -1,7 +1,7 @@
 package app.listener;
 
-import app.config.SourceDestination;
 import app.collector.SonarqubeDataCollector;
+import app.config.SourceDestination;
 import app.model.BuildDetailsModel;
 import app.reference.ReferenceDataService;
 import app.reference.pojo.Repo;
@@ -34,31 +34,23 @@ public class JenkinsMessageListener {
 
     @StreamListener(SourceDestination.INPUT)
     @SendTo(SourceDestination.OUTPUT)
-    public List<Map<String, String>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) {
+    public List<Map<String, String>> handleMessages(@Payload BuildDetailsModel buildDetailsModel) {
 
         List<Map<String, String>> projectsQualityInformation = new ArrayList<>();
 
-        for (List<BuildDetailsModel> buildDetailsModels : jenkinsBuildInfo.values()) {
-            for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
+        String repoUrl = buildDetailsModel.getGitDetails().getRepo();
 
-                //TODO : Need to fix this model
-                //Currently it is getting all builds information for
-                //Need to revisit
-                String repoUrl = buildDetailsModel.getGitDetails().getRepo();
+        //TODO: Hardcoded project name
+        //Fix it to fetch project information from mapping tables
+        String projectName = getProjectName(repoUrl);
 
-                //TODO: Hardcoded project name
-                //Fix it to fetch project information from mapping tables
-                String projectName = getProjectName(repoUrl);
+        String projectQualityData = collector.collect(projectName);
 
-                String projectQualityData = collector.collect(projectName);
+        Map<String, String> projectQualityInformation = new HashMap<>();
 
-                Map<String, String> projectQualityInformation = new HashMap<>();
+        projectQualityInformation.put(repoUrl, projectQualityData);
 
-                projectQualityInformation.put(repoUrl, projectQualityData);
-
-                projectsQualityInformation.add(projectQualityInformation);
-            }
-        }
+        projectsQualityInformation.add(projectQualityInformation);
 
         return projectsQualityInformation;
     }

@@ -40,46 +40,39 @@ public class JenkinsMessageListener {
 
     @StreamListener(Channels.JENKINS_PROCESSED_DATA)
     @SendTo(Channels.BITBUCKET_PROCESSED_DATA)
-    public List<Map<String, Map<String, CommitInfo>>> handleMessages(@Payload Map<String, List<BuildDetailsModel>> jenkinsBuildInfo) throws MalformedURLException {
+    public List<Map<String, Map<String, CommitInfo>>> handleMessages(@Payload BuildDetailsModel buildDetailsModel) throws MalformedURLException {
 
         List<Map<String, Map<String, CommitInfo>>> buildsRepoInformationList = new ArrayList<>();
 
-        for (List<BuildDetailsModel> buildDetailsModels : jenkinsBuildInfo.values()) {
-            for (BuildDetailsModel buildDetailsModel : buildDetailsModels) {
-                //TODO : Need to fix this model
-                //Currently it is getting all builds information for
-                //Need to revisit
-                GitDetails gitDetails = buildDetailsModel.getGitDetails();
-                String repoUrl = gitDetails.getRepo();
+        GitDetails gitDetails = buildDetailsModel.getGitDetails();
+        String repoUrl = gitDetails.getRepo();
 
-                String since = getLastSyncedCommit(repoUrl);
+        String since = getLastSyncedCommit(repoUrl);
 
-                String until = getBuildCommit(buildDetailsModel);
+        String until = getBuildCommit(buildDetailsModel);
 
-                updateLastSyncedCommit(gitDetails);
+        updateLastSyncedCommit(gitDetails);
 
-                Map<String, Map<String, CommitInfo>> repoInformation = new HashMap<>();
-                Map<String, CommitInfo> commitInfoMap = getRepoInformation(repoUrl, since, until);
+        Map<String, Map<String, CommitInfo>> repoInformation = new HashMap<>();
+        Map<String, CommitInfo> commitInfoMap = getRepoInformation(repoUrl, since, until);
 
-                if (isEmpty(commitInfoMap)) {
-                    LOG.warn("No commit information available for repo {}", repoUrl);
-                } else {
-                    repoInformation.put(repoUrl, commitInfoMap);
+        if (isEmpty(commitInfoMap)) {
+            LOG.warn("No commit information available for repo {}", repoUrl);
+        } else {
+            repoInformation.put(repoUrl, commitInfoMap);
 
-                    repoInformation
-                            .entrySet()
-                            .stream()
-                            .forEach(
-                                    entry -> {
-                                        entry.getValue()
-                                                .entrySet()
-                                                .stream()
-                                                .forEach(entryConsumer -> System.out.println(entryConsumer.getValue()));
-                                    }
-                            );
-                    buildsRepoInformationList.add(repoInformation);
-                }
-            }
+            repoInformation
+                    .entrySet()
+                    .stream()
+                    .forEach(
+                            entry -> {
+                                entry.getValue()
+                                        .entrySet()
+                                        .stream()
+                                        .forEach(entryConsumer -> System.out.println(entryConsumer.getValue()));
+                            }
+                    );
+            buildsRepoInformationList.add(repoInformation);
         }
 
         return buildsRepoInformationList;

@@ -2,25 +2,27 @@
   "organizationName": "Org",
   "transactionCycles": [
     {
+      "id": "tc-1",
       "transactionCycleName": "Cards",
       "geographies": [
         {
+          "id": "geo-1",
           "geographyName": "US",
           "projects": [
             {
+              "id": "pro-1",
               "projectName": "CardNG",
               "repos": [
                 {
+                  "id": "repo-1",
                   "name": "cardNG-repo-1",
                   "url": "cardNG-repo-url-1",
                   "buildJob": "cardNG-build-job-1",
-                  //
-                  //list of env contains deploy job
-                  //
                   "deployJob": "cardNG-deploy-job-1",
                   "sonarProjectKey": "cardNG-sonar-key-1"
                 },
                 {
+                  "id": "repo-2",
                   "name": "cardNG-repo-2",
                   "url": "cardNG-repo-url-2",
                   "buildJob": "cardNG-build-job-2",
@@ -28,6 +30,7 @@
                   "sonarProjectKey": "cardNG-sonar-key-2"
                 },
                 {
+                  "id": "repo-3",
                   "name": "cardNG-repo-3",
                   "url": "cardNG-repo-url-3",
                   "buildJob": "cardNG-build-job-3",
@@ -39,9 +42,11 @@
               "sonarServer": "cardNG-sonar-server"
             },
             {
+              "id": "pro-2",
               "projectName": "Collections",
               "repos": [
                 {
+                  "id": "repo-4",
                   "name": "Collections-repo-1",
                   "url": "Collections-repo-url-1",
                   "buildJob": "collections-build-job",
@@ -55,12 +60,15 @@
           ]
         },
         {
+          "id": "geo-2",
           "geographyName": "UK",
           "projects": [
             {
+              "id": "pro-3",
               "projectName": "some-UK-project",
               "repos": [
                 {
+                  "id": "repo-5",
                   "name": "some-UK-repo-1",
                   "url": "some-UK-repo-url-1",
                   "buildJob": "some-UK-build-job-1",
@@ -74,12 +82,15 @@
           ]
         },
         {
+          "id": "geo-3",
           "geographyName": "Germany",
           "projects": [
             {
+              "id": "pro-4",
               "projectName": "some-Germany-project",
               "repos": [
                 {
+                  "id": "repo-6",
                   "name": "some-Germany-repo-1",
                   "url": "some-Germany-repo-url-1",
                   "buildJob": "some-Germany-build-job-1",
@@ -95,15 +106,19 @@
       ]
     },
     {
+      "id": "tc-2",
       "transactionCycleName": "DCB",
       "geographies": [
         {
+          "id": "geo-4",
           "geographyName": "US",
           "projects": [
             {
+              "id": "pro-5",
               "projectName": "some-reference-project",
               "repos": [
                 {
+                  "id": "repo-7",
                   "name": "some-reference-repo",
                   "url": "some-reference-repo-url",
                   "buildJob": "some-refereence-build-job",

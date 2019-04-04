@@ -4,15 +4,25 @@ import java.util.List;
 
 
 public class TransactionCycle {
+    private String id;
     public String transactionCycleName;
     public List<Geography> geographies;
 
     public TransactionCycle() {
     }
 
-    public TransactionCycle(String transactionCycleName, List<Geography> geographies) {
+    public TransactionCycle(String id, String transactionCycleName, List<Geography> geographies) {
+        this.id = id;
         this.transactionCycleName = transactionCycleName;
         this.geographies = geographies;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTransactionCycleName() {
@@ -34,7 +44,8 @@ public class TransactionCycle {
     @Override
     public String toString() {
         return "TransactionCycle{" +
-                "geographyName='" + transactionCycleName + '\'' +
+                "id='" + id + '\'' +
+                ", transactionCycleName='" + transactionCycleName + '\'' +
                 ", geographies=" + geographies +
                 '}';
     }

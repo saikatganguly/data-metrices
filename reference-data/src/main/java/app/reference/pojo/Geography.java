@@ -3,15 +3,25 @@ package app.reference.pojo;
 import java.util.List;
 
 public class Geography {
+    private String id;
     public String geographyName;
     public List<Project> projects;
 
     public Geography() {
     }
 
-    public Geography(String geographyName, List<Project> projects) {
+    public Geography(String id, String geographyName, List<Project> projects) {
+        this.id = id;
         this.geographyName = geographyName;
         this.projects = projects;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getGeographyName() {
@@ -33,7 +43,8 @@ public class Geography {
     @Override
     public String toString() {
         return "Geography{" +
-                "geographyName='" + geographyName + '\'' +
+                "id='" + id + '\'' +
+                ", geographyName='" + geographyName + '\'' +
                 ", projects=" + projects +
                 '}';
     }

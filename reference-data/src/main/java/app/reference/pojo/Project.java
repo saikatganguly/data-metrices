@@ -3,6 +3,7 @@ package app.reference.pojo;
 import java.util.List;
 
 public class Project {
+    private String id;
     private String projectName;
     public List<Repo> repos;
     public String jenkinsServer;
@@ -11,11 +12,20 @@ public class Project {
     public Project() {
     }
 
-    public Project(String projectName, List<Repo> repos, String jenkinsServer, String sonarServer) {
+    public Project(String id, String projectName, List<Repo> repos, String jenkinsServer, String sonarServer) {
+        this.id = id;
         this.projectName = projectName;
         this.repos = repos;
         this.jenkinsServer = jenkinsServer;
         this.sonarServer = sonarServer;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public List<Repo> getRepos() {
@@ -53,7 +63,8 @@ public class Project {
     @Override
     public String toString() {
         return "Project{" +
-                "geographyName='" + projectName + '\'' +
+                "id='" + id + '\'' +
+                ", projectName='" + projectName + '\'' +
                 ", repos=" + repos +
                 ", jenkinsServer='" + jenkinsServer + '\'' +
                 ", sonarServer='" + sonarServer + '\'' +

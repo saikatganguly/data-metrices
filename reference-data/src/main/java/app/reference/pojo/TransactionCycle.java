@@ -43,7 +43,7 @@ public class TransactionCycle {
 
     @Override
     public String toString() {
-        return "TransactionCycle{" +
+        return "{" +
                 "id='" + id + '\'' +
                 ", transactionCycleName='" + transactionCycleName + '\'' +
                 ", geographies=" + geographies +

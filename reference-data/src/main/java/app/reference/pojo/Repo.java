@@ -70,7 +70,7 @@ public class Repo {
 
     @Override
     public String toString() {
-        return "Repo{" +
+        return "{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", url='" + url + '\'' +

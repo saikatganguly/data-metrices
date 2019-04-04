@@ -33,8 +33,8 @@ public class Organization {
 
     @Override
     public String toString() {
-        return "Organization{" +
-                "geographyName='" + organizationName + '\'' +
+        return "{" +
+                "organizationName='" + organizationName + '\'' +
                 ", transactionCycles=" + transactionCycles +
                 '}';
     }

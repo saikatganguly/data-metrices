@@ -2,13 +2,12 @@ package app.reference;
 
 import app.reference.pojo.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
 import static java.util.Collections.emptyList;
@@ -16,9 +15,6 @@ import static java.util.Objects.isNull;
 
 @Service
 public class ReferenceDataService {
-
-    @Value("user-provided-data.json")
-    private ClassPathResource userProvidedDataFile;
 
     private Organization userProvidedData;
 
@@ -28,10 +24,11 @@ public class ReferenceDataService {
 
         ObjectMapper mapper = new ObjectMapper();
         try {
-            userProvidedData = mapper.readValue(userProvidedDataFile.getFile(), Organization.class);
+            URL url = ClassLoader.getSystemClassLoader().getResource("user-provided-data.json");
+            userProvidedData = mapper.readValue(url, Organization.class);
             //createData();
         } catch (IOException e) {
-            System.out.println("Exception occured: " + e);
+            System.out.println("Exception occurred: " + e);
         }
 
         System.out.println("Organization Data: " + userProvidedData);

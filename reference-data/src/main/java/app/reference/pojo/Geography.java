@@ -42,7 +42,7 @@ public class Geography {
 
     @Override
     public String toString() {
-        return "Geography{" +
+        return "{" +
                 "id='" + id + '\'' +
                 ", geographyName='" + geographyName + '\'' +
                 ", projects=" + projects +

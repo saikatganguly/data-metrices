@@ -34,59 +34,20 @@ public class ReferenceDataService {
             System.out.println("Exception occured: " + e);
         }
 
-        //System.out.println("Organization Data: " + userProvidedData);
+        System.out.println("Organization Data: " + userProvidedData);
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     }
 
-    public List<Repo> getReposByProject(String transactionCycle, String geography, String project) {
-        if (isNull(project) || project.isEmpty()) {
-            return emptyList();
-        }
-        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
-            if (tc.getTransactionCycleName().equalsIgnoreCase(transactionCycle)) {
-                for (Geography geography1 : tc.getGeographies()) {
-                    if (geography1.getGeographyName().equalsIgnoreCase(geography)) {
-                        for (Project proj : geography1.getProjects()) {
-                            if (proj.getProjectName().equalsIgnoreCase(project)) {
-                                return proj.getRepos();
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return emptyList();
-    }
-
-
-    public List<Repo> getReposByProject(String project) {
-        if (isNull(project) || project.isEmpty()) {
-            return emptyList();
-        }
-        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
-            for (Geography geography1 : tc.getGeographies()) {
-                for (Project proj : geography1.getProjects()) {
-                    if (proj.getProjectName().equalsIgnoreCase(project)) {
-                        return proj.getRepos();
-                    }
-                }
-            }
-        }
-
-        return emptyList();
-    }
-
-    public Repo getRepo(String repoName) {
-        if (isNull(repoName) || repoName.isEmpty()) {
+    public Repo getRepo(String repoId) {
+        if (isNull(repoId) || repoId.isEmpty()) {
             return null;
         }
 
         for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
             for (Geography geography : transactionCycle.getGeographies()) {
-                for (Project proj : geography.getProjects()) {
-                    for (Repo repo : proj.getRepos()) {
-                        if (repo.getName().equalsIgnoreCase(repoName)) {
+                for (Project project : geography.getProjects()) {
+                    for (Repo repo : project.getRepos()) {
+                        if (repo.getId().equalsIgnoreCase(repoId)) {
                             return repo;
                         }
                     }
@@ -97,15 +58,36 @@ public class ReferenceDataService {
         return null;
     }
 
-    public List<Project> getProjectsByGeography(String transactionCycle, String geography) {
-        if (isNull(geography) || geography.isEmpty()) {
+    public List<Repo> getReposByProject(String transactionCycleId, String geographyId, String projectId) {
+        if (isNull(projectId) || projectId.isEmpty()) {
             return emptyList();
         }
         for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
-            if (tc.getTransactionCycleName().equalsIgnoreCase(transactionCycle)) {
-                for (Geography geo : tc.getGeographies()) {
-                    if (geo.getGeographyName().equalsIgnoreCase(geography)) {
-                        return geo.getProjects();
+            if (tc.getId().equalsIgnoreCase(transactionCycleId)) {
+                for (Geography geography : tc.getGeographies()) {
+                    if (geography.getId().equalsIgnoreCase(geographyId)) {
+                        for (Project project : geography.getProjects()) {
+                            if (project.getId().equalsIgnoreCase(projectId)) {
+                                return project.getRepos();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return emptyList();
+    }
+
+    public List<Project> getProjectsByGeography(String transactionCycleId, String geographyId) {
+        if (isNull(geographyId) || geographyId.isEmpty()) {
+            return emptyList();
+        }
+        for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
+            if (transactionCycle.getId().equalsIgnoreCase(transactionCycleId)) {
+                for (Geography geography : transactionCycle.getGeographies()) {
+                    if (geography.getId().equalsIgnoreCase(geographyId)) {
+                        return geography.getProjects();
                     }
                 }
             }
@@ -113,13 +95,13 @@ public class ReferenceDataService {
         return emptyList();
     }
 
-    public List<Geography> getGeographyByTransactionCycle(String transactionCycle) {
-        if (isNull(transactionCycle) || transactionCycle.isEmpty()) {
+    public List<Geography> getGeographyByTransactionCycle(String transactionCycleId) {
+        if (isNull(transactionCycleId) || transactionCycleId.isEmpty()) {
             return emptyList();
         }
-        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
-            if (tc.getTransactionCycleName().equalsIgnoreCase(transactionCycle)) {
-                return tc.getGeographies();
+        for (TransactionCycle transactionCycle : userProvidedData.getTransactionCycles()) {
+            if (transactionCycle.getId().equalsIgnoreCase(transactionCycleId)) {
+                return transactionCycle.getGeographies();
             }
         }
         return emptyList();

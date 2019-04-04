@@ -15,8 +15,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
 import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
 
@@ -33,130 +33,120 @@ public class BuildDurationController {
         this.referenceDataService = referenceDataService;
     }
 
-    @RequestMapping("/reference-data/{projectName}")
-    public List<String> referenceData(@PathVariable(name = "projectName") String projectName) {
-        return referenceDataService.getReposByProject(projectName)
-                .stream()
-                .map(Repo::getName)
-                .collect(Collectors.toList());
-    }
-
-    @RequestMapping("/org/{transactionCycle}/{geography}/{project}/{repo}")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}/{repoId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> buildDurationForRepo(@PathVariable String transactionCycle,
-                                                    @PathVariable String geography,
-                                                    @PathVariable String project,
-                                                    @PathVariable String repo,
+    public Map<String, Double> buildDurationForRepo(@PathVariable String transactionCycleId,
+                                                    @PathVariable String geographyId,
+                                                    @PathVariable String projectId,
+                                                    @PathVariable String repoId,
                                                     @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                     @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         Map<String, Double> response = new HashMap<>();
 
-        Repo repo1 = referenceDataService.getRepo(repo);
+        Repo repo = referenceDataService.getRepo(repoId);
 
         double average = repository
-                .findByRepoAndDateBetween(repo1.getUrl(), fromDate, toDate)
+                .findByRepoAndDateBetween(repo.getUrl(), fromDate, toDate)
                 .stream()
                 .map(view -> view.getDuration())
                 .mapToDouble(i -> i)
                 .average()
                 .getAsDouble();
 
-        response.put(repo, average);
+        response.put(repoId, average);
         return response;
     }
 
-    @RequestMapping("/org/{transactionCycle}/{geography}/{project}/{repo}/all")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}/{repoId}/all")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<Long> buildDurationsForRepo(@PathVariable String transactionCycle,
-                                            @PathVariable String geography,
-                                            @PathVariable String project,
-                                            @PathVariable String repo,
+    public List<Long> buildDurationsForRepo(@PathVariable String transactionCycleId,
+                                            @PathVariable String geographyId,
+                                            @PathVariable String projectId,
+                                            @PathVariable String repoId,
                                             @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                             @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
 
-        Repo repo1 = referenceDataService.getRepo(repo);
+        Repo repo = referenceDataService.getRepo(repoId);
         return repository
-                .findByRepoAndDateBetween(repo1.getUrl(), fromDate, toDate)
+                .findByRepoAndDateBetween(repo.getUrl(), fromDate, toDate)
                 .stream()
                 .map(view -> view.getDuration())
-                .collect(Collectors.toList());
+                .collect(toList());
     }
 
-    @RequestMapping("/org/{transactionCycle}/{geography}/{project}")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> buildDurationForProject(@PathVariable String transactionCycle,
-                                                       @PathVariable String geography,
-                                                       @PathVariable String project,
+    public Map<String, Double> buildDurationForProject(@PathVariable String transactionCycleId,
+                                                       @PathVariable String geographyId,
+                                                       @PathVariable String projectId,
                                                        @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                        @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> repos = referenceDataService.getReposByProject(transactionCycle, geography, project)
+        List<String> repoIds = referenceDataService.getReposByProject(transactionCycleId, geographyId, projectId)
                 .stream()
-                .map(Repo::getName)
-                .collect(Collectors.toList());
+                .map(Repo::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
-        for (String repo : repos) {
-            Double average = buildDurationForRepo(transactionCycle, geography, project, repo, fromDate, toDate).get(repo);
-            response.put(repo, average);
-        }
+        repoIds.forEach(repoId -> {
+            Double average = buildDurationForRepo(transactionCycleId, geographyId, projectId, repoId, fromDate, toDate).get(repoId);
+            response.put(repoId, average);
+        });
 
         return response;
     }
 
-    @RequestMapping("/org/{transactionCycle}/{geography}")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> buildDurationForGeography(@PathVariable String transactionCycle,
-                                                         @PathVariable String geography,
+    public Map<String, Double> buildDurationForGeography(@PathVariable String transactionCycleId,
+                                                         @PathVariable String geographyId,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> projects = referenceDataService.getProjectsByGeography(transactionCycle, geography)
+        List<String> projectIds = referenceDataService.getProjectsByGeography(transactionCycleId, geographyId)
                 .stream()
-                .map(Project::getProjectName)
-                .collect(Collectors.toList());
+                .map(Project::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
 
-        for (String project : projects) {
-            Map<String, Double> reposAverage = buildDurationForProject(transactionCycle, geography, project, fromDate, toDate);
-            double average = reposAverage
+        projectIds.forEach(projectId -> {
+            double projectAverage = buildDurationForProject(transactionCycleId, geographyId, projectId, fromDate, toDate)
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
                     .average()
                     .getAsDouble();
-            response.put(project, average);
-        }
+            response.put(projectId, projectAverage);
+        });
 
         return response;
     }
 
-    @RequestMapping("/org/{transactionCycle}")
+    @RequestMapping("/org/{transactionCycleId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> buildDurationForTransactionCycle(@PathVariable String transactionCycle,
+    public Map<String, Double> buildDurationForTransactionCycle(@PathVariable String transactionCycleId,
                                                                 @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                                 @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> geographys = referenceDataService.getGeographyByTransactionCycle(transactionCycle)
+        List<String> geographyIds = referenceDataService.getGeographyByTransactionCycle(transactionCycleId)
                 .stream()
-                .map(Geography::getGeographyName)
-                .collect(Collectors.toList());
+                .map(Geography::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
 
-        for (String geography : geographys) {
-            Map<String, Double> reposAverage = buildDurationForGeography(transactionCycle, geography, fromDate, toDate);
-            double average = reposAverage
+        geographyIds.forEach(geographyId -> {
+            double geographyAverage = buildDurationForGeography(transactionCycleId, geographyId, fromDate, toDate)
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
                     .average()
                     .getAsDouble();
-            response.put(geography, average);
-        }
+            response.put(geographyId, geographyAverage);
+        });
 
         return response;
     }
@@ -166,22 +156,21 @@ public class BuildDurationController {
     @ResponseBody
     public Map<String, Double> buildDurationForOrganization(@RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                             @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> transactionCycles = referenceDataService.getTransactionCyclesByOrganization("org")
+        List<String> transactionCycleIds = referenceDataService.getTransactionCyclesByOrganization("org")
                 .stream()
-                .map(TransactionCycle::getTransactionCycleName)
-                .collect(Collectors.toList());
+                .map(TransactionCycle::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
 
-        for (String transactionCycle : transactionCycles) {
-            Map<String, Double> reposAverage = buildDurationForTransactionCycle(transactionCycle, fromDate, toDate);
-            double average = reposAverage
+        for (String transactionCycleId : transactionCycleIds) {
+            double transactionCycleAverage = buildDurationForTransactionCycle(transactionCycleId, fromDate, toDate)
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
                     .average()
                     .getAsDouble();
-            response.put(transactionCycle, average);
+            response.put(transactionCycleId, transactionCycleAverage);
         }
 
         return response;

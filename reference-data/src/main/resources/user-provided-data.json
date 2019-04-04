@@ -14,6 +14,9 @@
                   "name": "cardNG-repo-1",
                   "url": "cardNG-repo-url-1",
                   "buildJob": "cardNG-build-job-1",
+                  //
+                  //list of env contains deploy job
+                  //
                   "deployJob": "cardNG-deploy-job-1",
                   "sonarProjectKey": "cardNG-sonar-key-1"
                 },

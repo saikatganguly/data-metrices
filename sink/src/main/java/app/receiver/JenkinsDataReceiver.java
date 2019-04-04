@@ -19,7 +19,11 @@ public class JenkinsDataReceiver {
     @StreamListener(Channels.JENKINS_PROCESSED_DATA)
     public void handleMessages(@Payload BuildDetailsModel buildInfo) {
         System.out.println("Build info : " + buildInfo);
-        Query query= Query.query(Criteria.where("repoName").is(buildInfo.getGitDetails().getRepo()));
+        Criteria criteria = Criteria.where("repoName").is(buildInfo.getGitDetails().getRepo());
+
+        //TODO::
+//        Criteria criteria1 = Criteria.where("id").is(fetch from reference data);
+        Query query= Query.query(criteria);
         mongoTemplate.upsert(query, new Update().push("builds", buildInfo), "jenkins_collection");
         //mongoTemplate.insert(buildInfo, "jenkins-processed-data");
     }

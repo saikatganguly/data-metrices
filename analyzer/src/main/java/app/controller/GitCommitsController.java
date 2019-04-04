@@ -15,8 +15,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
 import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
 
@@ -33,92 +33,117 @@ public class GitCommitsController {
         this.referenceDataService = referenceDataService;
     }
 
-    @RequestMapping("/org/{transactionCycle}/{geography}/{project}/{repo}")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}/{repoId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForRepo(@PathVariable String transactionCycle,
-                                                      @PathVariable String geography,
-                                                      @PathVariable String project,
-                                                      @PathVariable String repo,
+    public Map<String, Double> commitFrequencyForRepo(@PathVariable String transactionCycleId,
+                                                      @PathVariable String geographyId,
+                                                      @PathVariable String projectId,
+                                                      @PathVariable String repoId,
                                                       @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                       @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         Map<String, Double> response = new HashMap<>();
-        response.put(repo, repository.getAverageOfDurationByRepoAndDateBetween(repo, fromDate, toDate));
+
+        Repo repo = referenceDataService.getRepo(repoId);
+
+        double frequency = repository
+                .findByRepoAndDateBetween(repo.getUrl(), fromDate, toDate)
+                .stream()
+                .map(view -> view.getCount())
+                .mapToDouble(i -> i)
+                .sum();
+
+        response.put(repoId, frequency);
         return response;
     }
 
-    @RequestMapping("/org/{transactionCycle}/{geography}/{project}")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}/{repoId}/all")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForProject(@PathVariable String transactionCycle,
-                                                         @PathVariable String geography,
-                                                         @PathVariable String project,
+    public List<Long> commitFrequenciesForRepo(@PathVariable String transactionCycleId,
+                                               @PathVariable String geographyId,
+                                               @PathVariable String projectId,
+                                               @PathVariable String repoId,
+                                               @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                               @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
+
+        Repo repo = referenceDataService.getRepo(repoId);
+        return repository
+                .findByRepoAndDateBetween(repo.getUrl(), fromDate, toDate)
+                .stream()
+                .map(view -> view.getCount())
+                .collect(toList());
+    }
+
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}")
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public Map<String, Double> commitFrequencyForProject(@PathVariable String transactionCycleId,
+                                                         @PathVariable String geographyId,
+                                                         @PathVariable String projectId,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                          @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> repos = referenceDataService.getReposByProject(transactionCycle, geography, project)
+        List<String> repoIds = referenceDataService.getReposByProject(transactionCycleId, geographyId, projectId)
                 .stream()
-                .map(Repo::getUrl)
-                .collect(Collectors.toList());
+                .map(Repo::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
-        for (String repo : repos) {
-            response.put(repo, commitFrequencyForRepo(transactionCycle, geography, project, repo, fromDate, toDate).get(repo));
-        }
+        repoIds.forEach(repoId -> {
+            Double repoCommitFrequency = commitFrequencyForRepo(transactionCycleId, geographyId, projectId, repoId, fromDate, toDate).get(repoId);
+            response.put(repoId, repoCommitFrequency);
+        });
 
         return response;
     }
 
-    @RequestMapping("/org/{transactionCycle}/{geography}")
+    @RequestMapping("/org/{transactionCycleId}/{geographyId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForGeography(@PathVariable String transactionCycle,
-                                                           @PathVariable String geography,
+    public Map<String, Double> commitFrequencyForGeography(@PathVariable String transactionCycleId,
+                                                           @PathVariable String geographyId,
                                                            @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                            @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> projects = referenceDataService.getProjectsByGeography(transactionCycle, geography)
+        List<String> projectIds = referenceDataService.getProjectsByGeography(transactionCycleId, geographyId)
                 .stream()
-                .map(Project::getProjectName)
-                .collect(Collectors.toList());
+                .map(Project::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
 
-        for (String project : projects) {
-            Map<String, Double> reposAverage = commitFrequencyForProject(transactionCycle, geography, project, fromDate, toDate);
-            double average = reposAverage
+        projectIds.forEach(projectId -> {
+            double projectCommitFrequency = commitFrequencyForProject(transactionCycleId, geographyId, projectId, fromDate, toDate)
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
-                    .average()
-                    .getAsDouble();
-            response.put(project, average);
-        }
+                    .sum();
+            response.put(projectId, projectCommitFrequency);
+        });
 
         return response;
     }
 
-    @RequestMapping("/org/{transactionCycle}")
+    @RequestMapping("/org/{transactionCycleId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForTransactionCycle(@PathVariable String transactionCycle,
+    public Map<String, Double> commitFrequencyForTransactionCycle(@PathVariable String transactionCycleId,
                                                                   @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                                   @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> geographys = referenceDataService.getGeographyByTransactionCycle(transactionCycle)
+        List<String> geographyIds = referenceDataService.getGeographyByTransactionCycle(transactionCycleId)
                 .stream()
-                .map(Geography::getGeographyName)
-                .collect(Collectors.toList());
+                .map(Geography::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
 
-        for (String geography : geographys) {
-            Map<String, Double> reposAverage = commitFrequencyForGeography(transactionCycle, geography, fromDate, toDate);
-            double average = reposAverage
+        geographyIds.forEach(geographyId -> {
+            double geographyCommitFrequency = commitFrequencyForGeography(transactionCycleId, geographyId, fromDate, toDate)
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
-                    .average()
-                    .getAsDouble();
-            response.put(geography, average);
-        }
+                    .sum();
+            response.put(geographyId, geographyCommitFrequency);
+        });
 
         return response;
     }
@@ -128,22 +153,20 @@ public class GitCommitsController {
     @ResponseBody
     public Map<String, Double> commitFrequencyForOrganization(@RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
                                                               @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
-        List<String> transactionCycles = referenceDataService.getTransactionCyclesByOrganization("org")
+        List<String> transactionCycleIds = referenceDataService.getTransactionCyclesByOrganization("org")
                 .stream()
-                .map(TransactionCycle::getTransactionCycleName)
-                .collect(Collectors.toList());
+                .map(TransactionCycle::getId)
+                .collect(toList());
 
         Map<String, Double> response = new HashMap<>();
 
-        for (String transactionCycle : transactionCycles) {
-            Map<String, Double> reposAverage = commitFrequencyForTransactionCycle(transactionCycle, fromDate, toDate);
-            double average = reposAverage
+        for (String transactionCycleId : transactionCycleIds) {
+            double transactionCycleCommitFrequency = commitFrequencyForTransactionCycle(transactionCycleId, fromDate, toDate)
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
-                    .average()
-                    .getAsDouble();
-            response.put(transactionCycle, average);
+                    .sum();
+            response.put(transactionCycleId, transactionCycleCommitFrequency);
         }
 
         return response;

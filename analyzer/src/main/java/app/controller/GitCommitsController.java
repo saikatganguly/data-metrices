@@ -23,7 +23,7 @@ import static org.springframework.format.annotation.DateTimeFormat.ISO.DATE;
 
 
 @RestController
-@RequestMapping("/metrices/commit-frequency")
+@RequestMapping("/metrices/commits")
 public class GitCommitsController {
 
     private GitCommitsViewRepository repository;
@@ -38,12 +38,12 @@ public class GitCommitsController {
     @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}/{repoId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForRepo(@PathVariable String transactionCycleId,
-                                                      @PathVariable String geographyId,
-                                                      @PathVariable String projectId,
-                                                      @PathVariable String repoId,
-                                                      @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
-                                                      @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
+    public Map<String, Double> commitCountForRepo(@PathVariable String transactionCycleId,
+                                                  @PathVariable String geographyId,
+                                                  @PathVariable String projectId,
+                                                  @PathVariable String repoId,
+                                                  @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                  @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
         Map<String, Double> response = new HashMap<>();
 
         Repo repo = referenceDataService.getRepo(repoId);
@@ -62,12 +62,12 @@ public class GitCommitsController {
     @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}/{repoId}/all")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<Long> commitFrequenciesForRepo(@PathVariable String transactionCycleId,
-                                               @PathVariable String geographyId,
-                                               @PathVariable String projectId,
-                                               @PathVariable String repoId,
-                                               @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
-                                               @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
+    public List<Long> commitsForRepo(@PathVariable String transactionCycleId,
+                                     @PathVariable String geographyId,
+                                     @PathVariable String projectId,
+                                     @PathVariable String repoId,
+                                     @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                     @RequestParam @DateTimeFormat(iso = DATE) Date toDate) {
 
         Repo repo = referenceDataService.getRepo(repoId);
         return repository
@@ -80,12 +80,12 @@ public class GitCommitsController {
     @RequestMapping("/org/{transactionCycleId}/{geographyId}/{projectId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForProject(@PathVariable String transactionCycleId,
-                                                         @PathVariable String geographyId,
-                                                         @PathVariable String projectId,
-                                                         @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
-                                                         @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
-                                                         @RequestParam(required = false) List<String> repoIds) {
+    public Map<String, Double> commitCountForProject(@PathVariable String transactionCycleId,
+                                                     @PathVariable String geographyId,
+                                                     @PathVariable String projectId,
+                                                     @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                     @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
+                                                     @RequestParam(required = false) List<String> repoIds) {
 
 
         if (isNull(repoIds) || repoIds.isEmpty()) {
@@ -97,7 +97,7 @@ public class GitCommitsController {
 
         Map<String, Double> response = new HashMap<>();
         repoIds.forEach(repoId -> {
-            Double repoCommitFrequency = commitFrequencyForRepo(transactionCycleId, geographyId, projectId, repoId, fromDate, toDate).get(repoId);
+            Double repoCommitFrequency = commitCountForRepo(transactionCycleId, geographyId, projectId, repoId, fromDate, toDate).get(repoId);
             response.put(repoId, repoCommitFrequency);
         });
 
@@ -107,11 +107,11 @@ public class GitCommitsController {
     @RequestMapping("/org/{transactionCycleId}/{geographyId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForGeography(@PathVariable String transactionCycleId,
-                                                           @PathVariable String geographyId,
-                                                           @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
-                                                           @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
-                                                           @RequestParam(required = false) List<String> projectIds) {
+    public Map<String, Double> commitCountForGeography(@PathVariable String transactionCycleId,
+                                                       @PathVariable String geographyId,
+                                                       @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                       @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
+                                                       @RequestParam(required = false) List<String> projectIds) {
         if (isNull(projectIds) || projectIds.isEmpty()) {
             projectIds = referenceDataService.getProjectsByGeography(transactionCycleId, geographyId)
                     .stream()
@@ -122,7 +122,7 @@ public class GitCommitsController {
         Map<String, Double> response = new HashMap<>();
 
         projectIds.forEach(projectId -> {
-            double projectCommitFrequency = commitFrequencyForProject(transactionCycleId, geographyId, projectId, fromDate, toDate, emptyList())
+            double projectCommitFrequency = commitCountForProject(transactionCycleId, geographyId, projectId, fromDate, toDate, emptyList())
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
@@ -136,10 +136,10 @@ public class GitCommitsController {
     @RequestMapping("/org/{transactionCycleId}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForTransactionCycle(@PathVariable String transactionCycleId,
-                                                                  @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
-                                                                  @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
-                                                                  @RequestParam(required = false) List<String> geographyIds) {
+    public Map<String, Double> commitCountForTransactionCycle(@PathVariable String transactionCycleId,
+                                                              @RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                              @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
+                                                              @RequestParam(required = false) List<String> geographyIds) {
         if (isNull(geographyIds) || geographyIds.isEmpty()) {
             geographyIds = referenceDataService.getGeographyByTransactionCycle(transactionCycleId)
                     .stream()
@@ -150,7 +150,7 @@ public class GitCommitsController {
         Map<String, Double> response = new HashMap<>();
 
         geographyIds.forEach(geographyId -> {
-            double geographyCommitFrequency = commitFrequencyForGeography(transactionCycleId, geographyId, fromDate, toDate, emptyList())
+            double geographyCommitFrequency = commitCountForGeography(transactionCycleId, geographyId, fromDate, toDate, emptyList())
                     .values()
                     .stream()
                     .mapToDouble(i -> i)
@@ -164,9 +164,9 @@ public class GitCommitsController {
     @RequestMapping("/org")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Map<String, Double> commitFrequencyForOrganization(@RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
-                                                              @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
-                                                              @RequestParam(required = false) List<String> transactionCycleIds) {
+    public Map<String, Double> commitCountForOrganization(@RequestParam @DateTimeFormat(iso = DATE) Date fromDate,
+                                                          @RequestParam @DateTimeFormat(iso = DATE) Date toDate,
+                                                          @RequestParam(required = false) List<String> transactionCycleIds) {
         if (isNull(transactionCycleIds) || transactionCycleIds.isEmpty()) {
             transactionCycleIds = referenceDataService.getTransactionCyclesByOrganization("org")
                     .stream()
@@ -177,7 +177,7 @@ public class GitCommitsController {
         Map<String, Double> response = new HashMap<>();
 
         for (String transactionCycleId : transactionCycleIds) {
-            double transactionCycleCommitFrequency = commitFrequencyForTransactionCycle(transactionCycleId, fromDate, toDate, emptyList())
+            double transactionCycleCommitFrequency = commitCountForTransactionCycle(transactionCycleId, fromDate, toDate, emptyList())
                     .values()
                     .stream()
                     .mapToDouble(i -> i)

@@ -206,6 +206,66 @@ public class ReferenceDataService {
         return null;
     }
 
+    public List<Repo> getReposByGeography(String transactionCycleId, String geographyId) {
+        List<Repo> repos = new ArrayList<>();
+
+        if (isNull(geographyId) || geographyId.isEmpty()) {
+            return emptyList();
+        }
+        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
+            if (tc.getId().equalsIgnoreCase(transactionCycleId)) {
+                for (Geography geography : tc.getGeographies()) {
+                    if (geography.getId().equalsIgnoreCase(geographyId)) {
+                        for (Project project : geography.getProjects()) {
+                            for (Repo repo : project.getRepos()) {
+                                repos.add(repo);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return repos;
+    }
+
+    public List<Repo> getReposByTransactionCycle(String transactionCycleId) {
+        List<Repo> repos = new ArrayList<>();
+
+        if (isNull(transactionCycleId) || transactionCycleId.isEmpty()) {
+            return emptyList();
+        }
+        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
+            if (tc.getId().equalsIgnoreCase(transactionCycleId)) {
+                for (Geography geography : tc.getGeographies()) {
+                    for (Project project : geography.getProjects()) {
+                        for (Repo repo : project.getRepos()) {
+                            repos.add(repo);
+                        }
+                    }
+                }
+            }
+        }
+        return repos;
+
+    }
+
+    public List<Repo> getAllRepos() {
+        List<Repo> repos = new ArrayList<>();
+
+        for (TransactionCycle tc : userProvidedData.getTransactionCycles()) {
+            for (Geography geography : tc.getGeographies()) {
+                for (Project project : geography.getProjects()) {
+                    for (Repo repo : project.getRepos()) {
+                        repos.add(repo);
+                    }
+                }
+            }
+        }
+        return repos;
+
+
+    }
+
     /*public static void main(String[] args) throws IOException {
         Repo repo = new Repo("some-reference-repo","some-refereence-build-job", "some-reference-deploy-job","some-reference-sonar-key");
         Project project = new Project("some-reference-project", asList(repo),"some-reference-jenkins-server","some-reference-sonar-server");

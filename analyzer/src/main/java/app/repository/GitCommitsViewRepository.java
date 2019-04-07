@@ -12,4 +12,6 @@ public interface GitCommitsViewRepository extends MongoRepository<GitCommitsView
     GitCommitsView findByRepoAndDate(String repo, Date todayDate);
 
     List<GitCommitsView> findByRepoAndDateBetween(String repo, Date from, Date to);
+
+    List<GitCommitsView> findByRepoInAndDateBetween(List<String> repoUrls, Date fromDate, Date toDate);
 }

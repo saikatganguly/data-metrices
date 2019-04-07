@@ -4,7 +4,7 @@ import java.util.Date;
 
 //@Entity
 public class GitCommitsView {
-  //  @Id
+    //  @Id
     private String id;
     private String repo;
     private String branch;

@@ -69,7 +69,7 @@ public class GitCommitFrequencyController {
                 .stream()
                 .collect(groupingBy(GitCommitsView::getDate))
                 .entrySet().forEach(repos ->
-                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos))
+                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos.getValue()))
         );
 
         return response;
@@ -94,7 +94,7 @@ public class GitCommitFrequencyController {
                 .stream()
                 .collect(groupingBy(GitCommitsView::getDate))
                 .entrySet().forEach(repos ->
-                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos))
+                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos.getValue()))
         );
 
         return response;
@@ -118,7 +118,7 @@ public class GitCommitFrequencyController {
                 .stream()
                 .collect(groupingBy(GitCommitsView::getDate))
                 .entrySet().forEach(repos ->
-                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos))
+                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos.getValue()))
         );
 
         return response;
@@ -141,9 +141,8 @@ public class GitCommitFrequencyController {
                 .stream()
                 .collect(groupingBy(GitCommitsView::getDate))
                 .entrySet().forEach(repos ->
-                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos))
+                response.put(repos.getKey().toString(), getCommitFrequencyForRepos(repos.getValue()))
         );
-
         return response;
     }
 
@@ -157,7 +156,7 @@ public class GitCommitFrequencyController {
                 .findByRepoInAndDateBetween(repoUrls, fromDate, toDate);
     }
 
-    private long getCommitFrequencyForRepos(Map.Entry<Date, List<GitCommitsView>> repos) {
-        return repos.getValue().stream().mapToLong(i -> i.getCount()).sum();
+    private long getCommitFrequencyForRepos(List<GitCommitsView> repos) {
+        return repos.stream().mapToLong(i -> i.getCount()).sum();
     }
 }
